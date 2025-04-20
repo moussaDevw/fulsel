@@ -64,7 +64,7 @@ export const SectionProject = ({
           <Button
             key={option.id}
             variant={activeFilter === option.value ? "default" : "outline"}
-            className={`rounded-[46px] shadow-[0px_0px_14px_3px_#00000024] h-[43px] px-6 font-bold font-['Raleway',Helvetica] text-[15px] tracking-[0.75px] ${
+            className={`rounded-[46px] shadow-[0px_0px_14px_3px_#00000024] h-[43px] px-6 font-bold font-['Raleway',Helvetica] text-[15px] tracking-[0.75px] cursor-pointer ${
               activeFilter === option.value
                 ? "bg-[#1f3359] text-white"
                 : "border-[#1f3359] text-[#bd7b2a]"
