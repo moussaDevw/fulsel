@@ -16,7 +16,11 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: "Fulser | Investissement Immobilier d'Exception",
-  description: "Découvrez des opportunités d'investissement immobilier d'exception avec Fulser, votre partenaire immobilier de confiance.",
+  description:
+    "Découvrez des opportunités d'investissement immobilier d'exception avec Fulser, votre partenaire immobilier de confiance.",
+  icons: {
+    icon: "/assets/svgs/logo.svg",
+  },
 };
 
 export default function RootLayout({
