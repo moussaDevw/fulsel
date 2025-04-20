@@ -22,6 +22,7 @@ const eslintConfig = [
       "no-undef": "off",
       "no-empty": "off",
       "no-prototype-builtins": "off",
+      "@next/next/no-img-element": "off",
     },
   },
 ];
