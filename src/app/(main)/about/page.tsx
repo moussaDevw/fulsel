@@ -64,13 +64,6 @@ export default function About() {
 
         {/* About Us Section */}
         <section className="bg-gradient-radial from-[rgba(252,252,252,1)] to-[rgba(255,250,244,0.07)] py-10 sm:py-14 md:py-24 px-4 md:px-8 lg:px-16">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-[50px] font-black tracking-[1px] sm:tracking-[1.75px] leading-tight">
-              <span className="text-[#1f3359]">A PROPOS </span>
-              <span className="text-[#d99541]">DE NOUS</span>
-            </h2>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Left image */}
             <div className="relative rounded-[20px] overflow-hidden">
@@ -84,6 +77,12 @@ export default function About() {
 
             {/* Right content */}
             <div className="flex flex-col gap-4 sm:gap-5 mt-4 sm:mt-0">
+              <div className="text-left mb-8 sm:mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-[50px] font-black tracking-[1px] sm:tracking-[1.75px] leading-tight">
+                  <span className="text-[#1f3359]">A PROPOS </span>
+                  <span className="text-[#d99541]">DE NOUS</span>
+                </h2>
+              </div>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="border-none">
                   <AccordionTrigger className="py-4 sm:py-5 px-4 sm:px-6 md:px-10 bg-white rounded-[16px] sm:rounded-[21px] shadow-[0px_4px_8px_2px_#d9954142] text-[#1f3359] font-bold text-sm sm:text-base tracking-[0.8px] sm:tracking-[1.12px] hover:no-underline cursor-pointer">
@@ -201,27 +200,29 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="relative rounded-[16px] sm:rounded-[21px] overflow-hidden"
-              >
-                <img
-                  className="w-full object-cover"
-                  alt={member.name}
-                  src={member.image}
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(196,196,196,0.02)] to-[rgba(31,51,89,0.81)] flex flex-col justify-end p-5 sm:p-8">
-                  <h3 className="font-black text-white text-xl sm:text-2xl md:text-[25px] tracking-[1px] sm:tracking-[1.75px]">
-                    {member.name}
-                  </h3>
-                  <p className="font-medium text-[#d99541] text-base sm:text-lg md:text-xl">
-                    {member.role}
-                  </p>
+          <div className="overflow-x-auto">
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-max md:min-w-0">
+              {teamMembers.map((member, index) => (
+                <div
+                  key={index}
+                  className="relative rounded-[16px] sm:rounded-[21px] overflow-hidden min-w-[300px]"
+                >
+                  <img
+                    className="w-full h-[400px] md:h-full object-cover"
+                    alt={member.name}
+                    src={member.image}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[rgba(196,196,196,0.02)] to-[rgba(31,51,89,0.81)] flex flex-col justify-end p-5 sm:p-8">
+                    <h3 className="font-black text-white text-xl sm:text-2xl md:text-[25px] tracking-[1px] sm:tracking-[1.75px]">
+                      {member.name}
+                    </h3>
+                    <p className="font-medium text-[#d99541] text-base sm:text-lg md:text-xl">
+                      {member.role}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <div className="flex justify-center mt-6 sm:mt-10 gap-3 sm:gap-4">

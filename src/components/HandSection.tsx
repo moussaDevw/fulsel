@@ -10,13 +10,8 @@ export const HandSection = () => {
     <div className="w-full max-w-full md:max-w-[399px] mx-auto mt-6">
       <Card className="rounded-[21px] border-none shadow-[0px_0px_2px_#1f335940] bg-[#FFFEFD]">
         <CardContent className="p-8">
-          <div className="relative w-full h-[385px] rounded-[21px] shadow-[0px_0px_2px_#1f335940] bg-[linear-gradient(180deg,rgba(31,65,89,1)_0%,rgba(8,58,95,1)_100%)] overflow-hidden">
-            <img
-              className="absolute inset-0 w-full h-full object-cover"
-              alt="Background"
-              src="/assets/images/iconBg.png"
-            />
-
+          <div className="relative w-full h-[385px] rounded-[21px] shadow-[0px_0px_2px_#1f335940] bg-[#1f3359] overflow-hidden">
+            <div className="absolute inset-0 w-full h-full bg-[url(/assets/images/iconBg.png)] opacity-12" />
             <div className="relative z-10 flex flex-col items-center pt-10">
               <div className="text-center font-bold text-white text-[19px] tracking-[0.95px] leading-[33.8px] mb-6">
                 POUR OBTENIR

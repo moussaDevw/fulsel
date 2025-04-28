@@ -1,9 +1,11 @@
 {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSaveMode": "modifications",
-    "editor.formatOnSaveOptions": {
-        "tabSize": 2,
-        "insertSpaces": true
-    }
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 6,
+  "workbench.editor.limit.perEditorGroup": true
 }
+  
