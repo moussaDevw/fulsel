@@ -164,7 +164,7 @@ export default function Navbar() {
           {/* Contact Button */}
           <Button
             onClick={() => router.push("/contact")}
-            className="hidden lg:block bg-[#d99541] hover:bg-[#c78530] text-white rounded-full px-8 cursor-pointer"
+            className="hidden lg:block h-[33px] bg-[#d99541] hover:bg-[#c78530] text-white rounded-full px-8 cursor-pointer"
           >
             Contact
           </Button>
