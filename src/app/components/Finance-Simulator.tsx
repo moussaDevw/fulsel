@@ -10,7 +10,7 @@ export const FinanceSimulator = ({ className }: FinanceSimulatorProps) => {
       className={`max-w-[1440px] mx-auto bg-[#F5F4F2] py-8 mb-20 ${className}`}
     >
       <div className="container mx-auto px-4">
-        <div className="relative bg-[#1f3359] rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
+        <div className="relative h-[330px] bg-[#1f3359] bg-[url(/assets/images/iconBg.png)] bg-blend-overlay bg-opacity-70 bg-cover bg-center rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
           <div className="w-full lg:w-2/3 text-white pr-0 md:pr-8 mb-6 md:mb-0 z-10">
             <h2 className="text-2xl md:text-3xl font-bold text-[#d99541] mb-4">
               Simulez votre financement en quelques clics !
@@ -27,7 +27,7 @@ export const FinanceSimulator = ({ className }: FinanceSimulatorProps) => {
               <button className="bg-[#d99541] hover:bg-[#d99541]/90 text-white rounded-full px-4 py-2 text-sm font-medium">
                 OBTENIR UNE ESTIMATION DÉTAILLÉE
               </button>
-              <button className="border border-white hover:bg-white/10 text-white rounded-full px-4 py-2 text-sm font-medium">
+              <button className="bg-[#d99541] border border-white hover:bg-white/10 text-white rounded-full px-4 py-2 text-sm font-medium">
                 PARLER À UN CONSEILLER
               </button>
             </div>

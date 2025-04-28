@@ -13,13 +13,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 w-full h-full [background:linear-gradient(133deg,rgba(24,32,48,0.8)_0%,rgba(31,51,89,0.8)_100%)]" />
         <div className="z-10 px-4 sm:px-8 md:px-12 lg:px-18 h-full flex flex-col justify-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-            Investissez Dans
+            Investissez dans
           </h1>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#d99541] leading-tight mt-1 sm:mt-2">
-            L&apos;immobilier D&apos;exception
+            l&apos;immobilier d&apos;exception
           </h2>
           <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mt-1 sm:mt-2 mb-3 sm:mb-6">
-            Avec Fulser Properties !
+            avec Fulser Properties !
           </h3>
 
           <p className="text-white text-base sm:text-lg md:text-xl max-w-2xl mb-6 sm:mb-8 md:mb-10">

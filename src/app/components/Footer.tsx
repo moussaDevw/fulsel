@@ -35,7 +35,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="w-full mt-10 bg-[#1f3359] bg-[url(/assets/images/iconBg.png)] bg-cover bg-center">
+    <footer className="w-full mt-10 bg-[#1f3359] bg-[url(/assets/images/iconBg.png)] bg-blend-overlay bg-opacity-70 bg-cover bg-center">
       <div className="container mx-auto px-4 py-12 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Logo and Contact */}

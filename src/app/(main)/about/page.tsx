@@ -87,12 +87,12 @@ export default function About() {
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="border-none">
                   <AccordionTrigger className="py-4 sm:py-5 px-4 sm:px-6 md:px-10 bg-white rounded-[16px] sm:rounded-[21px] shadow-[0px_4px_8px_2px_#d9954142] text-[#1f3359] font-bold text-sm sm:text-base tracking-[0.8px] sm:tracking-[1.12px] hover:no-underline cursor-pointer">
-                    Histoire de Fulser Properties
+                    Histoire
                   </AccordionTrigger>
                   <AccordionContent className="bg-[#efefef70] p-4 sm:p-6 mt-2">
                     <p className="font-normal text-black text-xs sm:text-sm leading-[24px] sm:leading-[27px]">
                       FULSER PROPERTIES : L'EXCELLENCE AU SERVICE DE
-                      L'IMMOBILIER
+                      l'IMMOBILIER
                       <br /> Une vision audacieuse. Une exigence absolue. Une
                       signature d'exception.
                       <br /> Fulser Properties n'est pas une simple entreprise

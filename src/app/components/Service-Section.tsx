@@ -43,7 +43,7 @@ export const ServiceSection = () => {
           <header className="pt-6 sm:pt-8 md:pt-12 text-center px-4">
             <h1 className="font-['Sansita',Helvetica] font-black text-3xl sm:text-4xl md:text-5xl tracking-[2px] sm:tracking-[3.50px] leading-tight sm:leading-[87px]">
               <span className="text-white tracking-[1px] sm:tracking-[1.75px]">
-                nOS
+                NOS
               </span>
               <span className="text-[#1f3359] tracking-[1px] sm:tracking-[1.75px]">
                 &nbsp;

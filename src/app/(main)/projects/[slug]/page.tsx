@@ -7,6 +7,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Footer } from "@/app/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
 import { FinanceSimulator } from "@/app/components/Finance-Simulator";
+import NavBar from "@/app/components/NavBar";
+
 export default function Project() {
   const [activeTab, setActiveTab] = useState("espace-loisirs");
 
@@ -14,8 +16,8 @@ export default function Project() {
   const projectDetails = [
     { label: "Nom du projet :", value: "Keur Marieme Mermoz" },
     { label: "Statut Projet :", value: "En Cours" },
-    { label: "Date de début ;", value: "Janvier 2023" },
-    { label: "Date de livraison ;", value: "Janvier 2026" },
+    { label: "Date de début :", value: "Mars 2025" },
+    { label: "Date de livraison :", value: "Décembre 2026" },
   ];
 
   // Apartment types data
@@ -50,6 +52,9 @@ export default function Project() {
   return (
     <div className="bg-white flex flex-row justify-center w-full">
       <div className="w-full bg-white overflow-hidden relative">
+        {/* NavBar fixe */}
+        <NavBar />
+
         {/* Header Section */}
         <HeroSection
           title="Keur Marieme Mermoz"
@@ -60,36 +65,41 @@ export default function Project() {
         />
 
         {/* Project Info Card */}
-        <section className="relative w-full mt-8 md:mt-12 mx-auto max-w-[1440px]">
-          <img
-            className="w-full h-auto md:h-[500px] lg:h-[700px] object-cover rounded-lg md:rounded-xl"
-            alt="Project Building"
-            src="/assets/images/immeuble.jpg"
-          />
+        <section className="relative w-full mt-8 md:mt-12 mx-auto max-w-[1440px] rounded-lg md:rounded-xl">
+          <div className="px-3 md:px-0">
+            <img
+              className="w-full h-auto md:h-[500px] lg:h-[700px] object-cover rounded-lg md:rounded-xl"
+              alt="Project Building"
+              src="/assets/images/immeuble.jpg"
+            />
+          </div>
 
-          <Card className="bg-white absolute w-[90%] md:w-[85%] lg:w-[90%] -bottom-[10%] left-1/2 transform -translate-x-1/2  rounded-lg md:rounded-xl shadow-md border-none">
-            <CardContent className="flex flex-col md:flex-row justify-between items-center py-4 md:py-6 px-4">
+          <Card className="bg-white absolute w-[85%] md:w-[85%] lg:w-[80%] -bottom-[10%] left-1/2 transform -translate-x-1/2 rounded-lg md:rounded-xl shadow-md border-none">
+            <CardContent className="grid grid-cols-2 gap-2 md:flex md:flex-row md:justify-between items-center py-4 md:py-6 px-4">
               {projectDetails.map((detail, index) => (
                 <React.Fragment key={index}>
-                  <div className="flex flex-col items-center py-2 md:px-4 lg:px-8">
-                    <h3 className="font-raleway font-bold text-[#d99541] text-base md:text-lg lg:text-xl">
+                  <div className="flex flex-col items-start py-2 md:px-4 lg:px-8 relative">
+                    <h3 className="font-raleway font-medium text-[#d99541] text-base md:text-lg lg:text-xl text-left">
                       {detail.label}
                     </h3>
-                    <p className="font-raleway font-semibold text-[#1f3359] text-sm md:text-base lg:text-lg mt-1 md:mt-2">
+                    <p className="font-raleway font-bold text-[#1f3359] text-sm md:text-base lg:text-lg mt-1 md:mt-2 text-left">
                       {detail.value}
                     </p>
+
+                    {/* Séparateur vertical entre les colonnes sur mobile */}
+                    {index % 2 === 0 && index < projectDetails.length - 1 && (
+                      <div className="absolute h-1/2 w-[1px] bg-[#8E8E8E] right-0 top-1/3 md:hidden"></div>
+                    )}
+
+                    {/* Séparateur horizontal après la première rangée sur mobile */}
+                    {/* {index < 2 && (
+                      <div className="absolute w-full h-[1px] bg-[#8E8E8E] bottom-0 left-0 md:hidden"></div>
+                    )} */}
                   </div>
+
+                  {/* Séparateur vertical pour desktop */}
                   {index < projectDetails.length - 1 && (
-                    <Separator
-                      orientation="horizontal"
-                      className="my-2 md:hidden"
-                    />
-                  )}
-                  {index < projectDetails.length - 1 && (
-                    <Separator
-                      orientation="vertical"
-                      className="hidden md:block h-16 lg:h-20"
-                    />
+                    <div className="hidden md:block h-16 lg:h-20 w-[1px] bg-[#8E8E8E]"></div>
                   )}
                 </React.Fragment>
               ))}
@@ -98,7 +108,7 @@ export default function Project() {
         </section>
 
         {/* Presentation Section */}
-        <section className="px-4 md:px-8 lg:px-16 mt-12 md:mt-24 max-w-[1440px] mx-auto">
+        <section className="px-4 md:px-8 lg:px-1 mt-20 md:mt-35 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">PRESENTATION </span>
             <span className="font-black text-[#d99541]">DU PROJET</span>
@@ -150,7 +160,7 @@ export default function Project() {
         </section>
 
         {/* Apartments Section */}
-        <section className="px-4 md:px-8 lg:px-16 mt-8 md:mt-12 max-w-[1440px] mx-auto">
+        <section className="px-4 md:px-8 lg:px-1 mt-8 md:mt-12 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">LES </span>
             <span className="font-black text-[#d99541]">APPARTEMENT</span>
@@ -175,7 +185,7 @@ export default function Project() {
         </section>
 
         {/* Amenities Section */}
-        <section className="px-4 md:px-8 lg:px-16 mt-8 md:mt-12 max-w-[1440px] mx-auto">
+        <section className="px-4 md:px-8 lg:px-1 mt-8 md:mt-12 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">LES </span>
             <span className="font-black text-[#d99541]">AMENAGEMENTS</span>
@@ -200,9 +210,9 @@ export default function Project() {
         </section>
 
         {/* Gallery Section */}
-        <section className="w-full mt-[40px] bg-white mb-[270px] max-w-[1440px] mx-auto">
-          <h2 className="[font-family:'Elza_Trial-Black',Helvetica] font-black text-[#d99541] text-[35px] tracking-[2.45px] leading-[87px] text-center pt-5">
-            Gallerie
+        <section className="w-full mt-[40px] bg-white lg:mb-[270px] max-w-[1440px] mx-auto">
+          <h2 className="uppercase [font-family:'Elza_Trial-Black',Helvetica] font-black text-[#d99541] text-[35px] tracking-[2.45px] leading-[87px] text-center pt-5">
+            Galerie
           </h2>
 
           <h3 className="[font-family:'Raleway',Helvetica] font-bold text-[#1f3359] text-[27px] text-center mt-4">

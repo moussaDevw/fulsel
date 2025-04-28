@@ -89,12 +89,12 @@ export default function Contact() {
               <div className="flex flex-wrap gap-4 md:gap-6">
                 <div className="flex gap-4 md:gap-6">
                   <Input
-                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10"
+                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none"
                     placeholder="Prénom & Nom"
                   />
 
                   <Input
-                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10"
+                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none"
                     placeholder="Adresse Courriel"
                   />
                 </div>

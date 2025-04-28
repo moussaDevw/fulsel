@@ -34,7 +34,6 @@ export default function BlogPost() {
         {/* Main Content Area */}
         <div className="flex flex-col items-start lg:flex-row mt-8 md:mt-[106px] px-4 md:px-8 lg:px-[61px] gap-8">
           <div className="flex-1">
-            {/* Blog posts section */}
             <BlogContentSection
               post={post}
               className="rounded-none shadow-none"
@@ -51,7 +50,7 @@ export default function BlogPost() {
                 Augmenter La Valeur De Son Bien Avant La Vente
               </h2>
             </div>
-            <div className="mt-12">
+            {/* <div className="mt-12">
               <h2 className="font-extrabold text-[#1e1e1e] text-4xl tracking-[0.72px] leading-[39px] mb-6">
                 Laissez Un Commentaire
               </h2>
@@ -82,10 +81,9 @@ export default function BlogPost() {
                   Poster Un Commentaire
                 </Button>
               </div>
-            </div>
+            </div> */}
           </div>
 
-          {/* Sidebar sections */}
           <div className="w-full lg:w-[350px] mt-8 lg:mt-0">
             <BlogSearchSection />
             <BlogPostCardSection />

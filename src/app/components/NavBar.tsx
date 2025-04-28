@@ -2,16 +2,39 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="max-w-[1440px] mx-auto absolute top-0 left-0 right-0 z-20">
-      <div className="container mx-auto px-6 py-4">
+    <header
+      className={`w-full mx-auto fixed top-0 md:py-10 text-2xl left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? "bg-[#1F3359]/95 shadow-md py-2"
+          : "bg-white md:bg-transparent py-3 md:py-4"
+      }`}
+    >
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -23,10 +46,18 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold leading-none text-white">
+              <span
+                className={`text-xl font-bold leading-none ${
+                  isScrolled ? "text-white" : "text-[#1F3359] md:text-white"
+                }`}
+              >
                 Fulser
               </span>
-              <span className="text-xs tracking-widest text-white">
+              <span
+                className={`text-xs tracking-widest ${
+                  isScrolled ? "text-[#D99541]" : "text-[#D99541] md:text-white"
+                }`}
+              >
                 PROPERTIES
               </span>
             </div>
@@ -34,7 +65,9 @@ export default function Navbar() {
 
           {/* Menu Hamburger (mobile) */}
           <button
-            className="lg:hidden text-white transition-transform duration-300 ease-in-out"
+            className={`lg:hidden transition-transform duration-300 ease-in-out ${
+              isScrolled ? "text-white" : "text-[#172747] md:text-white"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu principal"
           >

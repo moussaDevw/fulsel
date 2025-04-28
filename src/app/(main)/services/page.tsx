@@ -116,7 +116,7 @@ export default function ServicesPage() {
                     </div>
 
                     {step.imagePosition === "bottom" && (
-                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-5 left-0 w-full">
+                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-3 left-0 w-full">
                         <div className="relative w-full">
                           <img
                             className="w-[calc(100%-20px)] h-[180px] sm:h-[220px] md:h-[249px] mx-auto object-cover rounded-[16px] sm:rounded-[21px] shadow-[0px_0px_7px_#1f335940]"
