@@ -108,7 +108,7 @@ export default function Project() {
         </section>
 
         {/* Presentation Section */}
-        <section className="px-4 md:px-8 lg:px-1 mt-20 md:mt-35 max-w-[1440px] mx-auto">
+        <section className="px-4 md:px-8 lg:px-8 mt-20 md:mt-35 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">PRESENTATION </span>
             <span className="font-black text-[#d99541]">DU PROJET</span>
