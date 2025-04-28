@@ -160,7 +160,7 @@ export default function Project() {
         </section>
 
         {/* Apartments Section */}
-        <section className="px-4 md:px-8 lg:px-1 mt-8 md:mt-12 max-w-[1440px] mx-auto">
+        <section className="px-4 md:px-8 lg:px-8 mt-8 md:mt-12 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">LES </span>
             <span className="font-black text-[#d99541]">APPARTEMENT</span>
@@ -185,7 +185,7 @@ export default function Project() {
         </section>
 
         {/* Amenities Section */}
-        <section className="px-4 md:px-8 lg:px-1 mt-8 md:mt-12 max-w-[1440px] mx-auto">
+        <section className="px-4 md:px-8 lg:px-8 mt-8 md:mt-12 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">LES </span>
             <span className="font-black text-[#d99541]">AMENAGEMENTS</span>
