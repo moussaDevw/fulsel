@@ -163,7 +163,7 @@ export default function Project() {
         <section className="px-4 md:px-8 lg:px-8 mt-8 md:mt-12 max-w-[1440px] mx-auto">
           <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
             <span className="font-black text-[#1f3359]">LES </span>
-            <span className="font-black text-[#d99541]">APPARTEMENT</span>
+            <span className="font-black text-[#d99541]">APPARTEMENTS</span>
           </h2>
 
           <ul className="mt-4 md:mt-6 space-y-3 md:space-y-6">
