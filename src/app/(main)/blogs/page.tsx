@@ -21,7 +21,7 @@ export default function Blogs() {
   const blogPosts = [
     {
       id: "1",
-      title: "Augmenter La Valeur De Son Bien Avant La Vente",
+      title: "Augmenter la valeur de son bien avant la vente",
       excerpt:
         "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum....",
       image: "/rectangle-86.png",
@@ -30,7 +30,7 @@ export default function Blogs() {
     },
     {
       id: "2",
-      title: "Augmenter La Valeur De Son Bien Avant La Vente",
+      title: "Augmenter la valeur de son bien avant la vente",
       excerpt:
         "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum....",
       image: "/rectangle-86.png",

@@ -14,17 +14,17 @@ export const Footer = () => {
   const footerMenus = {
     menu: [
       { name: "Accueil", link: "/" },
-      { name: "A Propos", link: "/a-propos" },
+      { name: "A propos", link: "/a-propos" },
       { name: "Services", link: "/services" },
       { name: "Projets", link: "/projets" },
       { name: "Blog", link: "/blogs" },
     ],
     services: [
-      { name: "Recherche De Foncier", link: "/services/1" },
-      { name: "Élaboration Du Projet", link: "/services/2" },
+      { name: "Recherche de foncier", link: "/services/1" },
+      { name: "Élaboration du projet", link: "/services/2" },
       { name: "Commercialisation", link: "/services/3" },
-      { name: "Suivi Des Travaux", link: "/services/4" },
-      { name: "Gestion Immobilière", link: "/services/5" },
+      { name: "Suivi des travaux", link: "/services/4" },
+      { name: "Gestion immobilière", link: "/services/5" },
     ],
   };
 
@@ -69,7 +69,7 @@ export const Footer = () => {
                 <h1 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   FULSER
                 </h1>
-                <p className="text-white text-xs md:text-sm font-normal uppercase tracking-widest">
+                <p className="text-[#D99541] text-xs md:text-sm font-normal uppercase tracking-widest">
                   PROPERTIES
                 </p>
               </div>
@@ -90,7 +90,7 @@ export const Footer = () => {
                   EMAIL :
                 </h3>
                 <p className="font-raleway font-normal text-[#ffffffba] text-sm mt-2">
-                  contact@fullser.com
+                  contact@fulserproperties.com
                 </p>
               </div>
 

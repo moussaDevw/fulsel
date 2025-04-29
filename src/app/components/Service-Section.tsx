@@ -7,12 +7,17 @@ import { useRouter } from "next/navigation";
 export const ServiceSection = () => {
   // Service card data for mapping
   const router = useRouter();
-  const goToService = () => {
-    router.push("/services");
+  const goToService = (serviceId) => {
+    if (serviceId === "all") {
+      router.push(`/services`);
+      return;
+    }
+
+    router.push(`/services/${serviceId}`);
   };
   const serviceCards = [
     {
-      id: "01",
+      id: 1,
       title: "RECHERCHE DE FONCIER :",
       description:
         "Partenariats avec des propriétaires pour mise à disposition de leurs terrains. En contre-partie, le propriétaire reçoit un ou des lots dans le cadre du projet.",
@@ -20,7 +25,7 @@ export const ServiceSection = () => {
       imagePosition: "bottom",
     },
     {
-      id: "02",
+      id: 2,
       title: "ELABORATION DU PROJET :",
       description:
         "Elaboration du projet immobilier selon la clientèle cible et selon le quartier en collaboration avec l'architecte. Construction clés en main.",
@@ -28,7 +33,7 @@ export const ServiceSection = () => {
       imagePosition: "top",
     },
     {
-      id: "03",
+      id: 3,
       title: "COMMERCIALISATION :",
       description:
         "Vente en l'état futur d'achèvement (VEFA) qui permet une acquisition en douceur du bien par les futurs propriétaires.",
@@ -108,7 +113,7 @@ export const ServiceSection = () => {
                     </p>
 
                     <Button
-                      onClick={goToService}
+                      onClick={() => goToService(card.id)}
                       variant="outline"
                       className="mt-4 sm:mt-6 h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] rounded-[46px] border-[#d99541] bg-[#122e48] font-['Raleway',Helvetica] font-bold text-[#fbfafa] text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer"
                     >
@@ -133,7 +138,7 @@ export const ServiceSection = () => {
           {/* See More Button */}
           <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 pb-6 sm:pb-8">
             <Button
-              onClick={goToService}
+              onClick={() => goToService("all")}
               className="h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] bg-copperOrange rounded-[46px] shadow-[0px_0px_11px_2px_#00000040] font-['Raleway',Helvetica] font-bold text-white text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer"
             >
               VOIR PLUS
