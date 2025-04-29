@@ -69,7 +69,7 @@ export const Footer = () => {
                 <h1 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   FULSER
                 </h1>
-                <p className="text-white text-xs md:text-sm font-normal uppercase tracking-widest">
+                <p className="text-[#D99541] text-xs md:text-sm font-normal uppercase tracking-widest">
                   PROPERTIES
                 </p>
               </div>
