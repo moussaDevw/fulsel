@@ -120,9 +120,9 @@ export default function Navbar() {
               Accueil
             </Link>
             <Link
-              href="/about"
+              href="/a-propos"
               className={`text-white relative ${
-                pathname === "/about"
+                pathname === "/a-propos"
                   ? "after:absolute after:w-1/2 after:h-0.5 after:bg-[#D99541] after:bottom-0 after:left-0"
                   : ""
               }`}
@@ -140,9 +140,9 @@ export default function Navbar() {
               Services
             </Link>
             <Link
-              href="/projects"
+              href="/projets"
               className={`text-white relative ${
-                pathname === "/projects" || pathname.startsWith("/projects/")
+                pathname === "/projets" || pathname.startsWith("/projets/")
                   ? "after:absolute after:w-1/2 after:h-0.5 after:bg-[#D99541] after:bottom-0 after:left-0"
                   : ""
               }`}
@@ -164,7 +164,7 @@ export default function Navbar() {
           {/* Contact Button */}
           <Button
             onClick={() => router.push("/contact")}
-            className="hidden lg:block h-[33px] bg-[#d99541] hover:bg-[#c78530] text-white rounded-full px-8 cursor-pointer"
+            className="hidden lg:block h-[50px] bg-[#d99541] hover:bg-[#c78530] text-white rounded-full px-8 cursor-pointer"
           >
             Contact
           </Button>
@@ -189,9 +189,9 @@ export default function Navbar() {
                 Accueil
               </Link>
               <Link
-                href="/about"
+                href="/a-propos"
                 className={`text-white transition-all duration-200 ${
-                  pathname === "/about"
+                  pathname === "/a-propos"
                     ? "border-l-4 border-[#d99541] pl-2"
                     : "pl-2 hover:border-l-4 hover:border-[#d99541]/50 hover:pl-2"
                 }`}
@@ -209,14 +209,14 @@ export default function Navbar() {
                 Services
               </Link>
               <Link
-                href="/projects"
+                href="/projets"
                 className={`text-white transition-all duration-200 ${
-                  pathname === "/projects"
+                  pathname === "/projets"
                     ? "border-l-4 border-[#d99541] pl-2"
                     : "pl-2 hover:border-l-4 hover:border-[#d99541]/50 hover:pl-2"
                 }`}
               >
-                Projet
+                Projets
               </Link>
               <Link
                 href="/blogs"

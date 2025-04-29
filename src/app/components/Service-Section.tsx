@@ -1,9 +1,15 @@
+"use client";
 import React from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
+import { useRouter } from "next/navigation";
 
 export const ServiceSection = () => {
   // Service card data for mapping
+  const router = useRouter();
+  const goToService = () => {
+    router.push("/services");
+  };
   const serviceCards = [
     {
       id: "01",
@@ -102,8 +108,9 @@ export const ServiceSection = () => {
                     </p>
 
                     <Button
+                      onClick={goToService}
                       variant="outline"
-                      className="mt-4 sm:mt-6 h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] rounded-[46px] border-[#d99541] bg-[#122e48] font-['Raleway',Helvetica] font-bold text-[#fbfafa] text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px]"
+                      className="mt-4 sm:mt-6 h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] rounded-[46px] border-[#d99541] bg-[#122e48] font-['Raleway',Helvetica] font-bold text-[#fbfafa] text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer"
                     >
                       LIRE PLUS
                     </Button>
@@ -125,7 +132,10 @@ export const ServiceSection = () => {
 
           {/* See More Button */}
           <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 pb-6 sm:pb-8">
-            <Button className="h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] bg-copperOrange rounded-[46px] shadow-[0px_0px_11px_2px_#00000040] font-['Raleway',Helvetica] font-bold text-white text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px]">
+            <Button
+              onClick={goToService}
+              className="h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] bg-copperOrange rounded-[46px] shadow-[0px_0px_11px_2px_#00000040] font-['Raleway',Helvetica] font-bold text-white text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer"
+            >
               VOIR PLUS
             </Button>
           </div>

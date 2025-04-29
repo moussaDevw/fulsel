@@ -59,23 +59,23 @@ export const SectionArticle = () => {
         </header>
 
         {/* Main content */}
-        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-7 lg:gap-8 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-[3fr_1fr] gap-4 sm:gap-6 md:gap-7 xl:gap-8 justify-center">
           {/* Featured articles */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-7 lg:gap-8 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-7 lg:gap-8 justify-center">
             {featuredArticles.map((article) => (
               <Card
                 key={article.id}
-                className="w-full sm:w-[320px] md:w-[350px] lg:w-[300px] h-[320px] sm:h-[400px] md:h-[430px] lg:h-[460px] p-0 bg-transparent border-0 relative overflow-hidden"
+                className="w-full h-[300px] sm:h-[320px] md:h-[350px] lg:h-[380px] p-0 bg-transparent border-0 relative overflow-hidden"
               >
                 <CardContent className="p-0 h-full">
                   <div
-                    className="w-full h-full bg-cover bg-center"
+                    className="w-full h-full bg-cover bg-center rounded-[15px] sm:rounded-[16px] md:rounded-[18px] lg:rounded-[20px]"
                     style={{ backgroundImage: `url(${article.image})` }}
                   >
                     <div className="absolute w-[calc(100%-12px)] sm:w-[calc(100%-14px)] md:w-[calc(100%-16px)] lg:w-[calc(100%-18px)] h-[calc(100%-12px)] sm:h-[calc(100%-14px)] md:h-[calc(100%-16px)] lg:h-[calc(100%-18px)] top-[6px] sm:top-[7px] md:top-[8px] lg:top-[9px] left-[6px] sm:left-[7px] md:left-[8px] lg:left-[9px] bg-[#1f335912] rounded-[15px] sm:rounded-[16px] md:rounded-[18px] lg:rounded-[20px]" />
 
                     {/* Date badge */}
-                    <div className="absolute w-[130px] sm:w-[140px] md:w-[150px] lg:w-[160px] h-7 sm:h-8 md:h-9 lg:h-10 top-[60%] sm:top-[363px] left-4 sm:left-[54px] bg-[#d99541] rounded-md flex items-center justify-center">
+                    <div className="absolute w-[130px] sm:w-[140px] md:w-[150px] lg:w-[160px] h-7 sm:h-8 md:h-9 lg:h-10 top-[70%] sm:top-[75%] md:top-[75%] lg:top-[75%] left-4 sm:left-6 md:left-8 lg:left-10 bg-[#d99541] rounded-md flex items-center justify-center">
                       <p className="font-['Montserrat',Helvetica] font-bold text-white text-sm sm:text-[15px] md:text-[16px] lg:text-[17px] text-center tracking-[0.6px] sm:tracking-[0.7px] md:tracking-[0.8px] lg:tracking-[0.85px] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[26px]">
                         {article.date}
                       </p>
@@ -83,7 +83,7 @@ export const SectionArticle = () => {
 
                     {/* Gradient overlay and title */}
                     <div className="absolute w-full h-[70px] sm:h-[80px] md:h-[85px] lg:h-[90px] left-0 right-0 bottom-0 rounded-[0px_0px_15px_15px] sm:rounded-[0px_0px_16px_16px] md:rounded-[0px_0px_18px_18px] lg:rounded-[0px_0px_20px_20px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)]">
-                      <h2 className="absolute w-[calc(100%-32px)] sm:w-[calc(100%-36px)] md:w-[calc(100%-40px)] lg:w-[calc(100%-44px)] bottom-[14px] sm:bottom-[16px] md:bottom-[18px] lg:bottom-[20px] left-4 sm:left-[54px] font-['Raleway',Helvetica] font-semibold text-white text-base sm:text-lg md:text-[19px] lg:text-[20px] leading-tight sm:leading-[24px] md:leading-[26px] lg:leading-[28px]">
+                      <h2 className="absolute w-[calc(100%-32px)] sm:w-[calc(100%-36px)] md:w-[calc(100%-40px)] lg:w-[calc(100%-44px)] bottom-[14px] sm:bottom-[16px] md:bottom-[18px] lg:bottom-[20px] left-4 sm:left-6 md:left-8 lg:left-10 font-['Raleway',Helvetica] font-semibold text-white text-base sm:text-lg md:text-[19px] lg:text-[20px] leading-tight sm:leading-[24px] md:leading-[26px] lg:leading-[28px]">
                         {article.title}
                       </h2>
                     </div>
@@ -94,20 +94,20 @@ export const SectionArticle = () => {
           </div>
 
           {/* Side articles */}
-          <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-4 sm:mt-5 md:mt-6 lg:mt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-1 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-4 sm:mt-5 md:mt-6 lg:mt-0">
             {sideArticles.map((article) => (
               <Card
                 key={article.id}
-                className="flex border-0 bg-transparent p-0"
+                className="flex border-0 bg-transparent p-0 h-full"
               >
-                <CardContent className="flex gap-2 sm:gap-3 md:gap-4 p-0">
+                <CardContent className="flex flex-col  lg:flex-row gap-2 sm:gap-3 md:gap-2 p-0 h-full">
                   <img
-                    className="w-[90px] h-[90px] sm:w-[120px] sm:h-[100px] md:w-[140px] md:h-[120px] lg:w-[150px] lg:h-[130px] object-cover"
+                    className="w-full h-[180px] sm:w-[120px] sm:h-[100px] md:w-[140px] md:h-[120px] lg:w-[150px] lg:h-[130px] object-cover rounded-md"
                     alt={article.title}
                     src={article.image}
                   />
-                  <div className="flex items-center">
-                    <h3 className="w-full sm:w-[140px] md:w-[150px] lg:w-[160px] font-['Raleway',Helvetica] font-extrabold text-[#1f3359] text-xs sm:text-sm md:text-[14px] lg:text-[15px] tracking-[0.4px] sm:tracking-[0.5px] md:tracking-[0.6px] lg:tracking-[0.65px] leading-[18px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px]">
+                  <div className="flex items-center py-2 sm:py-0 md:py-0 lg:py-0">
+                    <h3 className="w-full font-['Raleway',Helvetica] font-extrabold text-[#1f3359] text-xs sm:text-sm md:text-[10px] xl:text-[15px] tracking-[0.4px] sm:tracking-[0.5px] md:tracking-[0.6px] lg:tracking-[0.65px] leading-[18px] sm:leading-[20px] md:leading-[22px] lg:leading-[24px]">
                       {article.title}
                     </h3>
                   </div>

@@ -1,8 +1,14 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 export default function AboutSection() {
+  const router = useRouter();
+  const goToAbout = () => {
+    router.push("/a-propos");
+  };
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#F5F5F5]">
       <div className="relative w-full h-full bg-[url(/assets/images/img11.jpg)] bg-cover bg-[center_top] py-24 px-8 md:px-16">
@@ -36,14 +42,17 @@ export default function AboutSection() {
             </div>
 
             <div className="mt-8">
-              <Button className="bg-[#1f3359] text-white font-['Raleway',Helvetica] font-bold text-[15px] tracking-[0.75px] rounded-[46px] px-8 py-4 shadow-[0px_0px_11px_2px_#00000040] hover:bg-[#1f3359]/90 transition-colors">
+              <Button
+                onClick={goToAbout}
+                className="bg-[#1f3359] h-[50px] text-white font-['Raleway',Helvetica] font-bold text-[15px] tracking-[0.75px] rounded-[46px] px-8 py-4 shadow-[0px_0px_11px_2px_#00000040] hover:bg-[#1f3359]/90 transition-colors cursor-pointer"
+              >
                 EN SAVOIR PLUS
               </Button>
             </div>
           </div>
 
           {/* Right image section */}
-          <div className="w-full lg:w-[540px] h-[651px] relative">
+          <div className="w-full lg:w-[540px] h-[651px] relative hidden lg:block">
             <Card className="w-full h-full bg-[url(/assets/images/img2.jpg)] bg-cover bg-center border-0 overflow-hidden rounded-[272.5px_283.5px_0px_0px]">
               <div className="absolute inset-0 rounded-[272.5px_283.5px_0px_0px] shadow-[0px_0px_26px_#00000040] [background:linear-gradient(180deg,rgba(217,149,65,0.15)_0%,rgba(106,91,79,0.15)_50%,rgba(31,51,89,0.15)_100%)]" />
             </Card>

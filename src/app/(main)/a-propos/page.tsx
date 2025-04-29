@@ -58,7 +58,7 @@ export default function About() {
           title="A Propos"
           breadcrumbs={[
             { label: "Accueil", link: "/" },
-            { label: "A Propos", link: "/about", isActive: true },
+            { label: "A Propos", link: "/a-propos", isActive: true },
           ]}
         />
 

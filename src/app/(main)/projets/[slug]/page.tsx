@@ -60,7 +60,7 @@ export default function Project() {
           title="Keur Marieme Mermoz"
           breadcrumbs={[
             { label: "Accueil", link: "/" },
-            { label: "Projets", link: "/projects", isActive: true },
+            { label: "Projets", link: "/projets", isActive: true },
           ]}
         />
 

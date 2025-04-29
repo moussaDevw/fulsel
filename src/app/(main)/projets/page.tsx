@@ -36,7 +36,7 @@ export default function NosProjectPage() {
   ];
 
   const goToProject = (id: number) => {
-    router.push(`/projects/${id}`);
+    router.push(`/projets/${id}`);
   };
   return (
     <div className="bg-white flex flex-row justify-center w-full">
@@ -45,7 +45,7 @@ export default function NosProjectPage() {
           title="Keur Marieme Mermoz"
           breadcrumbs={[
             { label: "Accueil", link: "/" },
-            { label: "Projets", link: "/projects", isActive: true },
+            { label: "Projets", link: "/projets", isActive: true },
           ]}
         />
 

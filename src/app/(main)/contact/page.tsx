@@ -10,7 +10,7 @@ import { Footer } from "@/app/components/Footer";
 const contactCards = [
   {
     title: "TÉLÉPHONE",
-    content: "+221 77 777 77 77",
+    content: "+221 78 434 80 80",
     icon: Phone,
   },
   {

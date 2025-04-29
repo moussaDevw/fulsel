@@ -28,7 +28,7 @@ export default function Home() {
       <ServiceSection />
       <SectionProject projects={projects} showTitle={true} />
       <SectionArticle />
-      <FinanceSimulator className="mt-60" />
+      <FinanceSimulator className="mt-10 lg:mt-60" />
       <Footer />
     </main>
   );

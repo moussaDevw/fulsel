@@ -40,7 +40,7 @@ export const SectionProject = ({
     activeFilter === "tous" ? true : project.status === activeFilter
   );
   const goToProject = () => {
-    router.push(`/projects`);
+    router.push(`/projets`);
   };
   return (
     <main className="w-full max-w-[1440px] mx-auto min-h-screen bg-[#d9954108] py-4 px-6">
@@ -99,7 +99,7 @@ export const SectionProject = ({
             >
               <div className="flex items-center justify-between px-6 pt-11">
                 <div className="absolute h-[125px] right-0 left-0 bottom-0 rounded-[0px_0px_21px_21px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)]" />
-                <h2 className="z-20 font-['Inter',Helvetica] font-bold text-white text-[34px] flex items-center gap-2">
+                <h2 className="z-20 font-['Inter',Helvetica] font-bold text-white text-[24px]  xl:text-[34px] flex items-center gap-2">
                   {project.title}
                   <img
                     src="/assets/svgs/arrowGrup.svg"
