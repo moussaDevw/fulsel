@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export const ServiceSection = () => {
   // Service card data for mapping
   const router = useRouter();
-  const goToService = (serviceId) => {
+  const goToService = (serviceId: number | string) => {
     if (serviceId === "all") {
       router.push(`/services`);
       return;
