@@ -15,7 +15,7 @@ const contactCards = [
   },
   {
     title: "ADRESSE COURRIEL",
-    content: "contact@fulser.com",
+    content: "contact@fulserproperties.com",
     icon: Mail,
   },
   {

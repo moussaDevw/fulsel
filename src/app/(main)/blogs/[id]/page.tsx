@@ -47,7 +47,7 @@ export default function BlogPost() {
                 alt="blog-post"
               />
               <h2 className="mt-5 text-left text-xl font-bold">
-                Augmenter La Valeur De Son Bien Avant La Vente
+                Augmenter la valeur de son bien avant la vente
               </h2>
             </div>
             {/* <div className="mt-12">

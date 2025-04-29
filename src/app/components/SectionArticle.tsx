@@ -7,13 +7,13 @@ export const SectionArticle = () => {
   const featuredArticles = [
     {
       id: 1,
-      title: "Augmenter La Valeur De Son Bien Avant La Vente",
+      title: "Augmenter la valeur de son bien avant la vente",
       date: "29 Février 2025",
       image: "/assets/images/artbg.jpg",
     },
     {
       id: 2,
-      title: "Augmenter La Valeur De Son Bien Avant La Vente",
+      title: "Augmenter la valeur de son bien avant la vente",
       date: "29 Février 2025",
       image: "/assets/images/artbg.jpg",
     },
@@ -52,7 +52,7 @@ export const SectionArticle = () => {
           </h1>
 
           <p className="max-w-[800px] sm:max-w-[850px] md:max-w-[900px] lg:max-w-[900px] text-sm sm:text-base md:text-lg lg:text-[18px] font-bold text-[#1f3359] text-center tracking-[0.5px] sm:tracking-[0.75px] md:tracking-[0.85px] lg:tracking-[0.9px] leading-[20px] sm:leading-[24px] md:leading-[26px] lg:leading-[28px] font-['Raleway',Helvetica]">
-            Restez informer sur l&apos;immobilier avec Fulser Properties :
+            Restez informés sur l&apos;immobilier avec Fulser Properties :
             conseils, tendances et opportunités pour des investissements
             réussis.
           </p>

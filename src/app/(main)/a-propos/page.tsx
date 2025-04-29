@@ -44,7 +44,7 @@ export default function About() {
         "Fulser Properties s'engage à minimiser l'impact environnemental de ses projets en favorisant le cycle court et en optimisant l'efficacité énergétique de ses projets.",
     },
     {
-      title: "INNOVATION",
+      title: "Innovation",
       icon: "/assets/svgs/la-creativite.svg",
       description:
         "Nous proposons des constructions innovantes issues de la créativité d'architectes triés sur le volet.",
