@@ -218,7 +218,7 @@ export default function Navbar() {
               >
                 Projets
               </Link>
-              <Link
+              {/* <Link
                 href="/blogs"
                 className={`text-white transition-all duration-200 ${
                   pathname === "/blogs" || pathname.startsWith("/blogs/")
@@ -227,7 +227,7 @@ export default function Navbar() {
                 }`}
               >
                 Blog
-              </Link>
+              </Link> */}
               <Button
                 onClick={() => router.push("/contact")}
                 className="bg-[#d99541] hover:bg-[#c78530] text-white rounded-full w-full transition-colors duration-300"

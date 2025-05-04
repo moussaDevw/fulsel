@@ -157,7 +157,7 @@ export default function About() {
         </section>
 
         {/* Values Section */}
-        <section className="container py-10 sm:py-14 md:py-24">
+        <section className="container md:py-24 !pt-0">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-[50px] font-black tracking-[1px] sm:tracking-[1.75px] leading-tight">
               <span className="text-[#1f3359]">NOS </span>
