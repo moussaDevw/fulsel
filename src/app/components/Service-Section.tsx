@@ -136,7 +136,7 @@ export const ServiceSection = () => {
           </div>
 
           {/* See More Button */}
-          <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 pb-6 sm:pb-8">
+          <div className="flex justify-center mt-0 md:mt-12 pb-6 sm:pb-8">
             <Button
               onClick={() => goToService("all")}
               className="h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] bg-copperOrange rounded-[46px] shadow-[0px_0px_11px_2px_#00000040] font-['Raleway',Helvetica] font-bold text-white text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer"

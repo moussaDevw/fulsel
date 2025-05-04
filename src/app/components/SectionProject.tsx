@@ -85,11 +85,11 @@ export const SectionProject = ({
       </div>
 
       {/* Projects grid */}
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 gap-x-10 mb-5 lg:mb-10">
         {filteredProjects.map((project) => (
           <Card
             key={project.id}
-            className="w-full h-[535px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none"
+            className="w-full h-[535px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10"
           >
             <img
               src={project.image}
@@ -127,7 +127,7 @@ export const SectionProject = ({
 
       {/* View all projects button */}
       {shwAllProjects && (
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-5">
           <Button
             className="rounded-[46px] shadow-[0px_0px_11px_2px_#00000040] h-[43px] px-6 bg-gradient-to-r from-[#d99541] to-[#c78432] font-bold font-['Raleway',Helvetica] text-[15px] tracking-[0.75px] text-white cursor-pointer"
             onClick={goToProject}
