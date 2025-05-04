@@ -5,44 +5,20 @@ import { Footer } from "@/app/components/Footer";
 import { FinanceSimulator } from "@/app/components/Finance-Simulator";
 import { useRouter } from "next/navigation";
 import { SectionProject } from "@/app/components/SectionProject";
-export default function NosProjectPage() {
-  // Project data for mapping
-  const router = useRouter();
-  const allProjects = [
-    {
-      id: 1,
-      title: "Keur Marieme, Mermoz",
-      image: "/assets/images/img9.jpg",
-      status: "En cours",
-    },
-    {
-      id: 2,
-      title: "Buur sine, Point E",
-      image: "/assets/images/img9.jpg",
-      status: "A venir",
-    },
-    {
-      id: 3,
-      title: "Keur Marieme, Mermoz",
-      image: "/assets/images/img9.jpg",
-      status: "En cours",
-    },
-    {
-      id: 4,
-      title: "Buur sine, Point E",
-      image: "/assets/images/img9.jpg",
-      status: "A venir",
-    },
-  ];
+import { allProjects } from "@/data/projects";
 
-  const goToProject = (id: number) => {
-    router.push(`/projets/${id}`);
+export default function NosProjectPage() {
+  const router = useRouter();
+
+  const goToProject = (slug: string) => {
+    router.push(`/projets/${slug}`);
   };
+
   return (
-    <div className="bg-white flex flex-row justify-center w-full">
-      <div className="bg-white overflow-hidden w-full relative">
+    <div className="bg-[#FDFBF9] flex flex-row justify-center w-full">
+      <div className="overflow-hidden w-full relative">
         <HeroSection
-          title="Keur Marieme Mermoz"
+          title="Projets"
           breadcrumbs={[
             { label: "Accueil", link: "/" },
             { label: "Projets", link: "/projets", isActive: true },
@@ -50,42 +26,24 @@ export default function NosProjectPage() {
         />
 
         {/* Projects Section */}
-        <section className="w-full bg-[#d9954108] py-16 max-w-[1440px] mx-auto">
+        <section className="w-full py-16">
           {/* Projects Grid */}
-
           <SectionProject
             projects={allProjects}
-            showTitle={false}
+            showTitle={true}
             shwAllProjects={false}
-            onClick={() => goToProject(1)}
+            className="bg-[#FDFBF9]"
           />
 
           {/* Pagination */}
           <div className="flex justify-center mt-12 gap-5">
-            {/* <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full bg-white shadow-[0px_0px_3px_#00000040] border-none"
-            > */}
             <img className="" alt="Previous" src="/assets/svgs/arrowLeft.svg" />
-            {/* </Button> */}
-            {/* <Button
-              variant="outline"
-              size="icon"
-              className=" shadow-[0px_0px_3px_#00000040] border-none"
-            > */}
-            <img
-              // className="w-2 h-[15px]"
-              alt="Next"
-              src="/assets/svgs/arrowRigth.svg"
-            />
-            {/* </Button> */}
+            <img alt="Next" src="/assets/svgs/arrowRigth.svg" />
           </div>
         </section>
 
-        <FinanceSimulator />
-
-        <Footer />
+        <FinanceSimulator className="bg-[#F5F4F2] !mb-0 py-15 pt-35" />
+        <Footer className="mt-0" />
       </div>
     </div>
   );

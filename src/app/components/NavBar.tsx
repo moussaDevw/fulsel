@@ -28,17 +28,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`w-full mx-auto fixed top-0 md:py-10 text-2xl left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      className={`w-full mx-auto fixed top-0 md:py-7 text-2xl left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled
           ? "bg-[#1F3359]/95 shadow-md py-2"
           : "bg-white md:bg-transparent py-3 md:py-4"
       }`}
     >
-      <div className="container max-w-[1440px] mx-auto px-4 md:px-6">
+      <div className="container">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative h-8 w-8">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-8 w-8 pr-2">
               <img
                 src="/assets/svgs/logo.svg"
                 alt="Logo"
@@ -149,7 +149,7 @@ export default function Navbar() {
             >
               Projet
             </Link>
-            <Link
+            {/* <Link
               href="/blogs"
               className={`text-white relative ${
                 pathname === "/blogs" || pathname.startsWith("/blogs/")
@@ -158,13 +158,13 @@ export default function Navbar() {
               }`}
             >
               Blog
-            </Link>
+            </Link> */}
           </div>
 
           {/* Contact Button */}
           <Button
             onClick={() => router.push("/contact")}
-            className="hidden lg:block h-[50px] bg-[#d99541] hover:bg-[#c78530] text-white rounded-full px-8 cursor-pointer"
+            className="hidden lg:block h-[50px] bg-[#d99541] hover:bg-[#c78530] text-white rounded-full cursor-pointer"
           >
             Contact
           </Button>

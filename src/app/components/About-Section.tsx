@@ -10,19 +10,19 @@ export default function AboutSection() {
     router.push("/a-propos");
   };
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-[#F5F5F5]">
-      <div className="relative w-full h-full bg-[url(/assets/images/img11.jpg)] bg-cover bg-[center_top] py-24 px-8 md:px-16">
-        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+    <section className="container relative w-full min-h-screen overflow-hidden bg-[#F5F5F5]">
+      <div className="relative w-full h-full bg-[url(/assets/images/img11.jpg)] bg-cover bg-[center_top] py-12 lg:py-24">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left content section */}
           <div className="w-full lg:w-1/2 flex flex-col space-y-8">
-            <h1 className="font-['Sansita',Helvetica] font-black text-4xl md:text-5xl tracking-[3.5px] leading-tight md:leading-[87px]">
+            <h1 className="font-['Sansita',Helvetica] font-black text-2xl sm:text-3xl md:text-4xl lg:text-[30px] xl:text-[40px] tracking-[3.5px] leading-tight md:leading-[87px]">
               <span className="text-[#1f3359] tracking-[1.75px]">
                 A PROPOS{" "}
               </span>
               <span className="text-[#d99541] tracking-[1.75px]">DE NOUS </span>
             </h1>
 
-            <div className="font-['Raleway',Helvetica] font-normal text-base md:text-lg text-black text-justify tracking-[0.90px] leading-[32px] md:leading-[42px]">
+            <div className="font-['Raleway',Helvetica] font-normal text-base md:text-lg text-black text-justify tracking-[0.90px] leading-[32px] md:leading-[42px] px-2">
               <p>
                 Fulser Properties est une entreprise de promotion immobilière
                 fondée par des professionnels aux&nbsp;&nbsp;parcours

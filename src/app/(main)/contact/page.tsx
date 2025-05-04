@@ -36,11 +36,11 @@ export default function Contact() {
             { label: "Contact", link: "/contact", isActive: true },
           ]}
         />
-        <div className="flex flex-col md:flex-row justify-between gap-6 px-4 xl:px-[115px] mt-[97px] rounded-[21px]">
+        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-[97px] rounded-[21px]">
           {contactCards.map((card, index) => (
             <Card
               key={index}
-              className="relative w-full md:w-[404px] h-[297px] bg-[#1f3359] rounded-[21px]"
+              className="relative w-full h-[297px] bg-[#1f3359] rounded-[21px]"
             >
               <div className="absolute inset-0 w-full h-full bg-[url(/assets/images/iconBg.png)] opacity-12" />
               <CardContent className="flex flex-col items-center justify-center h-full p-0 relative z-10">
@@ -61,7 +61,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form Section */}
-        <div className="w-full max-w-[1327px] mx-auto flex flex-col md:flex-row px-4 sm:px-6 lg:px-8 mt-[78px] gap-6">
+        <div className="container flex flex-col md:flex-row px-4 sm:px-6 lg:px-8 mt-[78px] gap-6">
           <div className="hidden xl:block w-full xl:w-[489px] h-auto md:h-[667px] shadow-[0px_0px_6px_#00000040] overflow-hidden rounded-[21px] xl:rounded-r-none">
             <img
               className="w-full h-full object-cover"
@@ -82,25 +82,25 @@ export default function Contact() {
               </h2>
 
               <div className="flex flex-wrap gap-4 md:gap-6">
-                <div className="flex gap-4 md:gap-6">
+                <div className="w-full flex flex-col md:flex-row gap-4 md:gap-6">
                   <Input
-                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none"
+                    className="w-full md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none mb-5"
                     placeholder="Prénom & Nom"
                   />
 
                   <Input
-                    className="w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none"
+                    className="w-full md:w-[calc(50%-12px)] lg:w-[352px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none mb-5"
                     placeholder="Adresse Courriel"
                   />
                 </div>
 
                 <Input
-                  className="w-full md:w-full lg:w-[723px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none"
+                  className="w-full md:w-full lg:w-[723px] h-12 md:h-14 lg:h-16 bg-[#1f3359] rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 border-none mb-5"
                   placeholder="Objet"
                 />
 
                 <Textarea
-                  className="w-full md:w-full lg:w-[723px] h-[150px] md:h-[170px] lg:h-[193px] bg-[#1f3359] rounded-[35px] md:rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 py-6 md:py-7 lg:py-8 resize-none border-none"
+                  className="w-full md:w-full lg:w-[723px] h-[150px] md:h-[170px] lg:h-[193px] bg-[#1f3359] rounded-[35px] md:rounded-[45px] shadow-[0px_0px_8px_#ffffff40] text-[#ffffff87] text-base md:text-sm lg:text-lg px-6 md:px-8 lg:px-10 py-6 md:py-7 lg:py-8 resize-none border-none mb-5"
                   placeholder="Message"
                 />
               </div>
@@ -114,12 +114,12 @@ export default function Contact() {
         <div className="w-full px-4 xl:px-0 mt-12 md:mt-20">
           <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123952.40027206196!2d-17.569926450000002!3d14.716363300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0xb17c17d92d5db21f!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2sfr!4v1715112372218!5m2!1sfr!2sfr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.0647831656584!2d-17.4876843!3d14.7074843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173c0d5cf2c05%3A0x4f4c0e19d3c6c27d!2sMermoz%2C%20Dakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2sfr!4v1710834029812!5m2!1sfr!2sfr"
               className="w-full h-full border-0"
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              aria-label="Carte Google Maps de Dakar, Sénégal"
+              aria-label="Carte Google Maps de Mermoz, Dakar, Sénégal"
             ></iframe>
           </div>
         </div>

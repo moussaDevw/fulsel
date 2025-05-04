@@ -4,8 +4,12 @@ import React from "react";
 import { Separator } from "../../components/ui/separator";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
-export const Footer = () => {
+interface FooterProps {
+  className?: string;
+}
+export const Footer = ({ className = "mt-10" }: FooterProps) => {
   const pathname = usePathname();
   const [email, setEmail] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -53,7 +57,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full mt-10 bg-[#1f3359]">
+    <footer className={cn("relative w-full bg-[#1f3359]", className)}>
       <div className="absolute inset-0 w-full h-full bg-[url(/assets/images/iconBg.png)] opacity-12" />
       <div className="max-w-[1440px] mx-auto px-4 py-12 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">

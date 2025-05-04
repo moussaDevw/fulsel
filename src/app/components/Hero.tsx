@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Content container */}
       <div className="h-full flex flex-col justify-center bg-[url('/assets/images/img1.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 w-full h-full [background:linear-gradient(133deg,rgba(24,32,48,0.8)_0%,rgba(31,51,89,0.8)_100%)]" />
-        <div className="z-10 mt-20 px-4 sm:px-8 md:px-12 lg:px-18 h-full flex flex-col justify-center">
+        <div className="container z-10 md:mt-20 h-full flex flex-col justify-center">
           <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-6xl font-extrabold text-white leading-tight">
             Investissez dans
           </h1>

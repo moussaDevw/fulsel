@@ -17,24 +17,24 @@ export const ServiceSection = () => {
   };
   const serviceCards = [
     {
-      id: 1,
-      title: "RECHERCHE DE FONCIER :",
+      id: "01",
+      title: "RECHERCHE DE FONCIER",
       description:
         "Partenariats avec des propriétaires pour mise à disposition de leurs terrains. En contre-partie, le propriétaire reçoit un ou des lots dans le cadre du projet.",
       imageSrc: "/assets/images/img3.jpg",
       imagePosition: "bottom",
     },
     {
-      id: 2,
-      title: "ELABORATION DU PROJET :",
+      id: "02",
+      title: "ELABORATION DU PROJET",
       description:
         "Elaboration du projet immobilier selon la clientèle cible et selon le quartier en collaboration avec l'architecte. Construction clés en main.",
       imageSrc: "/assets/images/img4.jpg",
       imagePosition: "top",
     },
     {
-      id: 3,
-      title: "COMMERCIALISATION :",
+      id: "03",
+      title: "COMMERCIALISATION",
       description:
         "Vente en l'état futur d'achèvement (VEFA) qui permet une acquisition en douceur du bien par les futurs propriétaires.",
       imageSrc: "/assets/images/img5.jpg",
@@ -51,8 +51,8 @@ export const ServiceSection = () => {
         {/* Content container with relative positioning */}
         <div className="relative z-10">
           {/* Header */}
-          <header className="pt-6 sm:pt-8 md:pt-12 text-center px-4">
-            <h1 className="font-['Sansita',Helvetica] font-black text-3xl sm:text-4xl md:text-5xl tracking-[2px] sm:tracking-[3.50px] leading-tight sm:leading-[87px]">
+          <header className="pt-6 sm:pt-8 md:pt-12 text-center">
+            <h1 className="font-['Sansita',Helvetica] font-black text-2xl sm:text-3xl md:text-4xl lg:text-[30px] xl:text-[45px] tracking-[2px] sm:tracking-[3.50px] leading-tight sm:leading-[87px]">
               <span className="text-white tracking-[1px] sm:tracking-[1.75px]">
                 NOS
               </span>
@@ -79,11 +79,11 @@ export const ServiceSection = () => {
           </header>
 
           {/* Service Cards */}
-          <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 md:mt-16 px-4 sm:px-6">
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 md:mt-16">
             {serviceCards.map((card, index) => (
               <Card
                 key={card.id}
-                className="h-[450px] sm:h-[500px] md:h-[560px] bg-[#122e48] py-0 rounded-xl shadow-[0px_0px_13px_2px_#ffffff36] overflow-hidden relative"
+                className="h-[450px] sm:h-[500px] md:h-[560px] bg-[#122e48] py-0 rounded-xl shadow-[0px_0px_13px_2px_#ffffff36] overflow-hidden relative border-none mb-10"
               >
                 <CardContent className="p-0 h-full flex flex-col">
                   {/* Conditional rendering based on image position */}
@@ -100,15 +100,15 @@ export const ServiceSection = () => {
 
                   <div className="p-3 sm:p-4 md:p-5 flex-grow">
                     <div className="flex items-start">
-                      <span className="font-['Raleway',Helvetica] font-extrabold text-[#fbfafa] text-[40px] sm:text-[50px] md:text-[63px] leading-[24px] sm:leading-[30px]">
+                      <span className="font-['Raleway',Helvetica] font-extrabold text-[#fbfafa] text-[16px] sm:text-[20px] md:text-[22px] lg:text-[25px] xl:text-[63px] leading-[24px] sm:leading-[30px]">
                         {card.id}
                       </span>
-                      <h2 className="ml-3 sm:ml-4 font-['Raleway',Helvetica] font-extrabold text-[#d99541] text-base sm:text-lg md:text-[22px] leading-[24px] sm:leading-[30px]">
+                      <h2 className="ml-3 sm:ml-4 font-['Raleway',Helvetica] font-bold text-[#d99541] text-base sm:text-xs md:text-sm xl:text-[25px] leading-[24px] sm:leading-[30px]">
                         {card.title}
                       </h2>
                     </div>
 
-                    <p className="mt-4 sm:mt-6 font-['Raleway',Helvetica] font-normal text-[#fbfafa] text-sm sm:text-base leading-[24px] sm:leading-[30px]">
+                    <p className="mt-4 sm:mt-6 font-['Raleway',Helvetica] font-normal text-[#fbfafa] text-sm sm:text-xs md:text-sm xl:text-base leading-[24px] sm:leading-[30px]">
                       {card.description}
                     </p>
 

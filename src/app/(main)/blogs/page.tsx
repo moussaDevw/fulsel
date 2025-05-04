@@ -50,7 +50,7 @@ export default function Blogs() {
           ]}
         />
 
-        <div className="flex flex-col items-start lg:flex-row mt-8 md:mt-[106px] px-4 md:px-8 lg:px-[61px] gap-8">
+        <div className="container flex flex-col items-start lg:flex-row mt-8 md:mt-[106px] gap-8">
           <div className="flex-1">
             {/* Blog posts section */}
             {blogPosts.map((post, index) => (
