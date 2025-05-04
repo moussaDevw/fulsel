@@ -152,7 +152,7 @@ export default function Project() {
         <section className="container relative w-full mt-8 md:mt-12 mx-auto rounded-lg md:rounded-xl">
           <div className="px-3 md:px-0">
             <img
-              className="w-full h-auto md:h-[500px] lg:h-[700px] object-cover rounded-lg md:rounded-xl"
+              className="w-full h-[500px] md:h-[500px] lg:h-[700px] object-cover rounded-lg md:rounded-xl"
               alt={currentProject.title}
               src={currentProject.image}
             />
