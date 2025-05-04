@@ -13,19 +13,19 @@ export default function About() {
   // Team members data
   const teamMembers = [
     {
-      name: "Adji Fall",
-      role: "Assistante De Direction",
-      image: "/assets/images/per2.jpg",
+      name: "Bouna Diouf",
+      role: "Directeur général",
+      image: "/assets/images/per3.jpeg",
     },
     {
-      name: "Amadou Seck",
-      role: "Designer d'intérieur",
-      image: "/assets/images/per1.jpg",
+      name: "Latifa Barry",
+      role: "Directrice Technique",
+      image: "/assets/images/per2.jpeg",
     },
     {
-      name: "Coumba Sy",
-      role: "Assistante De Direction",
-      image: "/assets/images/per3.jpg",
+      name: "Boubacar Barry",
+      role: "PCA",
+      image: "/assets/images/per1.jpeg",
     },
   ];
 
@@ -63,8 +63,8 @@ export default function About() {
         />
 
         {/* About Us Section */}
-        <section className="bg-gradient-radial from-[rgba(252,252,252,1)] to-[rgba(255,250,244,0.07)] py-10 sm:py-14 md:py-24 px-4 md:px-8 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <section className="bg-gradient-radial from-[rgba(252,252,252,1)] to-[rgba(255,250,244,0.07)] py-10 sm:py-14 md:py-24">
+          <div className="container grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* Left image */}
             <div className="relative rounded-[20px] overflow-hidden">
               <img
@@ -157,7 +157,7 @@ export default function About() {
         </section>
 
         {/* Values Section */}
-        <section className="py-10 sm:py-14 md:py-24 px-4 md:px-8 lg:px-16">
+        <section className="container py-10 sm:py-14 md:py-24">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-[50px] font-black tracking-[1px] sm:tracking-[1.75px] leading-tight">
               <span className="text-[#1f3359]">NOS </span>
@@ -192,43 +192,45 @@ export default function About() {
         </section>
 
         {/* Team Section */}
-        <section className="bg-[#faf8faba] py-10 sm:py-14 md:py-24 px-4 md:px-8 lg:px-16">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-[50px] font-black tracking-[1px] sm:tracking-[1.75px] leading-tight">
-              <span className="text-[#1f3359]">NOTRE </span>
-              <span className="text-[#d99541]">EQUIPE</span>
-            </h2>
-          </div>
-
-          <div className="overflow-x-auto">
-            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-max md:min-w-0">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="relative rounded-[16px] sm:rounded-[21px] overflow-hidden min-w-[300px]"
-                >
-                  <img
-                    className="w-full h-[400px] md:h-full object-cover"
-                    alt={member.name}
-                    src={member.image}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[rgba(196,196,196,0.02)] to-[rgba(31,51,89,0.81)] flex flex-col justify-end p-5 sm:p-8">
-                    <h3 className="font-black text-white text-xl sm:text-2xl md:text-[25px] tracking-[1px] sm:tracking-[1.75px]">
-                      {member.name}
-                    </h3>
-                    <p className="font-medium text-[#d99541] text-base sm:text-lg md:text-xl">
-                      {member.role}
-                    </p>
-                  </div>
-                </div>
-              ))}
+        <section className="bg-[#faf8faba] py-10 sm:py-14 md:py-24">
+          <div className="container">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-[50px] font-black tracking-[1px] sm:tracking-[1.75px] leading-tight">
+                <span className="text-[#1f3359]">NOTRE </span>
+                <span className="text-[#d99541]">EQUIPE</span>
+              </h2>
             </div>
-          </div>
 
-          <div className="flex justify-center mt-6 sm:mt-10 gap-3 sm:gap-4">
-            <div className="w-5 h-5 sm:w-[25px] sm:h-[25px] rounded-full sm:rounded-[12.5px] shadow-[0px_0px_7px_#00000040] bg-[#d99541]"></div>
-            <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-lg shadow-[0px_0px_7px_#00000040] bg-[#d99541]"></div>
-            <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-lg shadow-[0px_0px_7px_#00000040] bg-[#d99541]"></div>
+            <div className="overflow-x-auto">
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-max md:min-w-0">
+                {teamMembers.map((member, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-[16px] sm:rounded-[21px] overflow-hidden min-w-[300px]"
+                  >
+                    <img
+                      className="w-full h-[400px] md:h-full object-cover"
+                      alt={member.name}
+                      src={member.image}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[rgba(196,196,196,0.02)] to-[rgba(31,51,89,0.81)] flex flex-col justify-end p-5 sm:p-8">
+                      <h3 className="font-black text-white text-xl sm:text-2xl md:text-[25px] tracking-[1px] sm:tracking-[1.75px]">
+                        {member.name}
+                      </h3>
+                      <p className="font-medium text-[#d99541] text-base sm:text-lg md:text-xl">
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-6 sm:mt-10 gap-3 sm:gap-4">
+              <div className="w-5 h-5 sm:w-[25px] sm:h-[25px] rounded-full sm:rounded-[12.5px] shadow-[0px_0px_7px_#00000040] bg-[#d99541]"></div>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-lg shadow-[0px_0px_7px_#00000040] bg-[#d99541]"></div>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-lg shadow-[0px_0px_7px_#00000040] bg-[#d99541]"></div>
+            </div>
           </div>
         </section>
         <FinanceSimulator className="mt-40 sm:mt-60" />

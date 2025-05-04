@@ -140,8 +140,8 @@ export default function ServicesPage() {
         />
 
         {/* Main Content Section */}
-        <section className="relative w-full max-w-[1440px] mx-auto">
-          <div className="relative px-4 md:px-8 lg:px-16 py-12 md:py-24">
+        <section className="relative w-full">
+          <div className="container py-12 md:py-24">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
               {/* Services Sidebar */}
               <div className="w-full lg:w-[397px] flex flex-col gap-8">

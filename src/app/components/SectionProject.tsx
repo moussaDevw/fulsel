@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 interface Project {
   id: number;
   title: string;
+  slug: string;
   status: string;
   image: string;
 }
@@ -18,6 +19,7 @@ type ProjectProps = {
   showTitle?: boolean;
   shwAllProjects?: boolean;
   onClick?: () => void;
+  className?: string;
 };
 
 export const SectionProject = ({
@@ -25,6 +27,7 @@ export const SectionProject = ({
   showTitle = true,
   onClick,
   shwAllProjects = true,
+  className = "bg-[#D99541]/3",
 }: ProjectProps) => {
   const router = useRouter();
   // Project filter options
@@ -39,15 +42,20 @@ export const SectionProject = ({
   const filteredProjects = projects.filter((project) =>
     activeFilter === "tous" ? true : project.status === activeFilter
   );
+
+  const goToDetailProject = (slug: string) => {
+    router.push(`/projets/${slug}`);
+  };
+
   const goToProject = () => {
     router.push(`/projets`);
   };
   return (
-    <main className="w-full max-w-[1440px] mx-auto min-h-screen bg-[#d9954108] py-4 px-6">
+    <main className={`min-h-screen py-4 ${className}`}>
       {/* Header */}
-      <header className="text-center mt-4 mb-16">
+      <header className="text-center">
         {showTitle && (
-          <h1 className="font-['Elza_Trial-Black',Helvetica] text-[50px] tracking-[3.50px] leading-[87px]">
+          <h1 className="font-['Elza_Trial-Black',Helvetica] text-2xl sm:text-3xl md:text-4xl lg:text-[30px] xl:text-[40px] tracking-[3.50px] leading-[87px]">
             <span className="font-black text-[#1f3359] tracking-[1.75px]">
               NOS{" "}
             </span>
@@ -59,7 +67,7 @@ export const SectionProject = ({
       </header>
 
       {/* Filter buttons */}
-      <div className="flex justify-center gap-4 mb-12">
+      <div className="flex justify-center gap-4 mb-12 mt-6">
         {filterOptions.map((option) => (
           <Button
             key={option.id}
@@ -77,7 +85,7 @@ export const SectionProject = ({
       </div>
 
       {/* Projects grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {filteredProjects.map((project) => (
           <Card
             key={project.id}
@@ -99,7 +107,10 @@ export const SectionProject = ({
             >
               <div className="flex items-center justify-between px-6 pt-11">
                 <div className="absolute h-[125px] right-0 left-0 bottom-0 rounded-[0px_0px_21px_21px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)]" />
-                <h2 className="z-20 font-['Inter',Helvetica] font-bold text-white text-[24px]  xl:text-[34px] flex items-center gap-2">
+                <h2
+                  className="z-20 font-['Inter',Helvetica] font-bold text-white text-[24px] md:text-xl  xl:text-[34px] flex items-center gap-2"
+                  onClick={() => goToDetailProject(project.slug)}
+                >
                   {project.title}
                   <img
                     src="/assets/svgs/arrowGrup.svg"
@@ -107,7 +118,7 @@ export const SectionProject = ({
                     className="object-cover size-[30px]"
                   />
                 </h2>
-                <MoveRightIcon className="w-8 h-[30px] text-white cursor-pointer" />
+                {/* <MoveRightIcon className="w-8 h-[30px] text-white cursor-pointer" /> */}
               </div>
             </CardContent>
           </Card>

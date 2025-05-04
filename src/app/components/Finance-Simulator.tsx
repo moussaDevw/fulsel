@@ -5,16 +5,16 @@ type FinanceSimulatorProps = {
   className?: string;
 };
 
-export const FinanceSimulator = ({ className }: FinanceSimulatorProps) => {
+export const FinanceSimulator = ({
+  className = "bg-[#F5F4F2]",
+}: FinanceSimulatorProps) => {
   const router = useRouter();
   const goToContact = () => {
     router.push("/contact");
   };
   return (
-    <div
-      className={`max-w-[1440px] mx-auto bg-[#F5F4F2] py-8 mb-20 ${className}`}
-    >
-      <div className="container mx-auto px-4">
+    <div className={`py-8 mb-20 ${className}`}>
+      <div className="container">
         <div className="relative h-[330px] bg-[#1f3359] rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center">
           <div className="absolute inset-0 w-full h-full bg-[url(/assets/images/iconBg.png)] opacity-12" />
           <div className="w-full lg:w-2/3 text-white pr-0 md:pr-8 mb-6 md:mb-0 z-10">

@@ -38,8 +38,8 @@ export const SectionArticle = () => {
   ];
 
   return (
-    <main className="bg-[#FBF9F7] w-full py-6 sm:py-8 md:py-12 lg:py-14 px-4 sm:px-6 md:px-8 lg:px-10">
-      <div className="max-w-[1440px] mx-auto">
+    <main className="bg-[#FBF9F7] w-full py-6 sm:py-8 md:py-12 lg:py-14">
+      <div className="container">
         {/* Header */}
         <header className="flex flex-col items-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black tracking-[1.5px] sm:tracking-[2px] md:tracking-[2.5px] lg:tracking-[2.75px] leading-tight sm:leading-[60px] md:leading-[65px] lg:leading-[70px] mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-center">
