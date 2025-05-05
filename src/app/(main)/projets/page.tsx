@@ -25,7 +25,6 @@ export default function NosProjectPage() {
           ]}
         />
 
-        {/* Projects Section */}
         <section className="w-full py-16">
           {/* Projects Grid */}
           <SectionProject
