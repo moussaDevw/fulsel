@@ -27,14 +27,14 @@ export const HeroSection = ({
         }}
       />
       <NavBar />
-      <div className="container">
-        <div className="w-[90%] sm:w-[80%] md:w-auto absolute top-[120px] sm:top-[180px] md:top-[210px] left-4 sm:left-8 xl:left-[73px]">
+      <div className="container h-full flex flex-col justify-center gap-8 px-4 sm:px-8 xl:px-[140px] 2xl:px-[115px]">
+        <div className="z-10 w-[90%] sm:w-[80%] md:w-auto">
           <h1 className="[font-family:'Elza_Trial-Black',Helvetica] font-black text-white text-[28px] sm:text-[32px] md:text-[50px] tracking-[1.5px] md:tracking-[3.50px] leading-tight md:leading-[87px] break-words">
             {title}
           </h1>
         </div>
 
-        <div className="absolute top-[185px] sm:top-[260px] md:top-[310px] left-4 sm:left-8 xl:left-[75px] flex items-center flex-wrap text-[14px] sm:text-[15px] md:text-[17px]">
+        <div className="flex items-center z-10 flex-wrap text-[14px] sm:text-[15px] md:text-[17px]">
           {breadcrumbs.map((item, index) => (
             <React.Fragment key={`breadcrumb-${index}`}>
               <span

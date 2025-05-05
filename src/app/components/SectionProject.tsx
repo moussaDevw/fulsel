@@ -89,7 +89,7 @@ export const SectionProject = ({
         {filteredProjects.map((project) => (
           <Card
             key={project.id}
-            className="w-full h-[535px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10"
+            className="w-full max-w-[630px] h-[651px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10"
           >
             <img
               src={project.image}

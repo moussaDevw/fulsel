@@ -59,7 +59,7 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
   return (
     <footer className={cn("relative w-full bg-[#1f3359]", className)}>
       <div className="absolute inset-0 w-full h-full bg-[url(/assets/images/iconBg.png)] opacity-12 pointer-events-none" />
-      <div className="relative max-w-[1440px] mx-auto px-4 py-12 lg:px-8 xl:px-12">
+      <div className="relative max-w-[1309px] mx-auto px-4 py-12 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Logo and Contact */}
           <div className="mb-8 md:mb-0">

@@ -147,7 +147,7 @@ export default function Navbar() {
                   : ""
               }`}
             >
-              Projet
+              Projets
             </Link>
             {/* <Link
               href="/blogs"

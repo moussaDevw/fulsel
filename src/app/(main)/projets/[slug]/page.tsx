@@ -59,8 +59,10 @@ const plans = [
 export default function Project() {
   const params = useParams();
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("ESPACE LOISIRS");
   const currentProject = allProjects.find((p) => p.slug === params.slug);
+  const [activeTab, setActiveTab] = useState(
+    currentProject?.slug === "karenga-almadies" ? "FAÇADE" : "ESPACE LOISIRS"
+  );
 
   if (!currentProject) {
     return <div>Projet non trouvé</div>;
@@ -110,19 +112,10 @@ export default function Project() {
   ];
 
   // Apartment types data
-  const apartmentTypes = [
-    "11 studios F1",
-    "4 appartements F3",
-    "9 appartements F4",
-    "1 Penthouse de 5 chambres",
-  ];
+  const apartmentTypes = currentProject.apartmentTypes || [];
 
   // Amenities data
-  const amenities = [
-    "Une entrée sécurisée 24H/24",
-    "Une piscine sur la terrasse avec une vue imprenable",
-    "Une salle de sport toute équipée avec sauna",
-  ];
+  const amenities = currentProject.amenities || [];
 
   // Gallery tabs data
   const galleryTabs = Object.keys(currentProject.gallery).map((key) => ({
@@ -155,6 +148,8 @@ export default function Project() {
               className="w-full h-[500px] md:h-[500px] lg:h-[700px] object-cover rounded-lg md:rounded-xl"
               alt={currentProject.title}
               src={currentProject.image}
+              loading="eager"
+              style={{ imageRendering: "crisp-edges" }}
             />
           </div>
 
@@ -194,43 +189,9 @@ export default function Project() {
           </h2>
 
           <div className="font-raleway font-normal text-black text-base md:text-lg text-justify leading-relaxed space-y-4 mt-6">
-            <div className="font-raleway font-normal text-black text-base md:text-lg text-justify leading-relaxed space-y-4 mt-6">
-              <p>
-                Cette résidence est bien plus qu&apos;un projet immobilier.
-                C&apos;est une vision incarnée de
-                l&apos;accueil&nbsp;&nbsp;chaleureux, de l&apos;élégance et du
-                confort que nous souhaitons vous faire vivre en ce lieu.
-              </p>
-              <p>
-                Le nom de cette résidence est un hommage à une femme
-                exceptionnelle symbole d&apos;amour, de&nbsp;&nbsp;bienveillance
-                et de simplicité. En choisissant de devenir propriétaire
-                d&apos;un appartement au sein de&nbsp;&nbsp;«Keur Marieme» vous
-                vous inscrivez dans une expérience unique de sécurité, de
-                confort et de&nbsp;&nbsp;prestige.
-              </p>
-              <p>
-                Chaque détail architectural, chaque aménagement et chaque
-                service offert ont été pensés avec une&nbsp;&nbsp;attention
-                particulière pour créer un environnement où vous vous sentirez
-                véritablement chez vous,&nbsp;&nbsp;entourés d&apos;un sentiment
-                d&apos;harmonie et de sérénité.
-              </p>
-              <p>
-                Les appartements que nous vous proposons offrent des prestations
-                de haut standing dans un lieu&nbsp;&nbsp;idéal.
-              </p>
-              <p>
-                Celles-ci se reflètent par des espaces de vie spacieux et
-                modulables, des équipements modernes et&nbsp;&nbsp;de qualité,
-                ainsi qu&apos;un niveau de finition d&apos;une rare exigence.
-              </p>
-              <p>
-                Nous vous invitons à découvrir ce magnifique programme et nous
-                vous donnons rendez-vous au&nbsp;&nbsp;2ème trimestre 2026 pour
-                la livraison du projet.
-              </p>
-            </div>
+            {currentProject.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
           </div>
 
           <Button className="px-6 py-3 mt-6 md:mt-8 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer">
@@ -372,7 +333,7 @@ export default function Project() {
                       {images.map((image, index) => (
                         <img
                           key={index}
-                          className="w-full h-[250px] object-cover rounded-[21px]"
+                          className="w-full h-[250px] object-cover rounded-[21px] mb-10"
                           alt={`${tabKey} ${index + 1}`}
                           src={image}
                         />
@@ -410,7 +371,7 @@ export default function Project() {
               {Object.entries(currentProject.gallery).map(
                 ([tabKey, images]) => (
                   <TabsContent key={tabKey} value={tabKey}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 justify-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 justify-items-center mb-40">
                       {images.map((image, index) => (
                         <img
                           key={index}
@@ -427,7 +388,7 @@ export default function Project() {
           </div>
         </section>
 
-        <FinanceSimulator className="!mb-0 bg-[#F5F4F2] py-40" />
+        <FinanceSimulator className="!mb-0 bg-[#F5F4F2] mt-10 lg:py-40" />
         <Footer className="!mt-0" />
       </div>
     </div>

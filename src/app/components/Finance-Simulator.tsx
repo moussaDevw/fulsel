@@ -21,24 +21,24 @@ export const FinanceSimulator = ({
             <h2 className="text-xl md:text-2xl xl:text-[38px] font-bold text-[#d99541] mb-4">
               Simulez votre financement en quelques clics !
             </h2>
-            <p className="text-sm md:text-sm xl:text-[21px] mb-2">
+            <p className="text-xs md:text-sm xl:text-[21px] mb-2">
               Calculez vos mensualités en fonction du montant emprunté et de la
               durée souhaitée.
             </p>
-            <p className="text-sm md:text-[21px] mb-6">
+            <p className="text-xs md:text-sm xl:text-[21px] mb-6">
               Obtenez une estimation rapide et ajustez votre projet en toute
               sérénité.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={goToContact}
-                className="bg-[#d99541] hover:bg-[#d99541]/90 text-white rounded-full px-4 py-2 text-[12px] md:text-[15px] font-medium"
+                className="bg-[#d99541] hover:bg-[#d99541]/90 text-white rounded-full px-4 py-2 text-[11px] md:text-[15px] font-medium"
               >
                 OBTENIR UNE ESTIMATION DÉTAILLÉE
               </button>
               <button
                 onClick={goToContact}
-                className="bg-[#d99541] border border-none hover:bg-white/10 text-white rounded-full px-4 py-2 text-[12px] md:text-[15px] font-medium"
+                className="bg-[#d99541] border border-none hover:bg-white/10 text-white rounded-full px-4 py-2 text-[11px] md:text-[15px] font-medium"
               >
                 PARLER À UN CONSEILLER
               </button>
