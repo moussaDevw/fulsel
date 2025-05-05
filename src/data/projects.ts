@@ -9,6 +9,8 @@ export interface Project {
   description: string[];
   apartmentTypes?: string[];
   amenities?: string[];
+  brochureUrl?: string;
+  location?: string;
   gallery: {
     [key: string]: string[];
   };
@@ -23,6 +25,9 @@ export const allProjects: Project[] = [
     status: "En cours",
     startDate: "Mars 2025",
     endDate: "Décembre 2026",
+    location: "https://maps.google.com/?q=14.707225,-17.472507",
+    brochureUrl:
+      "http://bronchure-pdf.fulserproperties.com/brochurekeurmariem.pdf",
     apartmentTypes: [
       "11 studios F1",
       "4 appartements F3",

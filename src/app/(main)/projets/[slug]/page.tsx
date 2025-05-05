@@ -194,11 +194,18 @@ export default function Project() {
             ))}
           </div>
 
-          <Button className="px-6 py-3 mt-6 md:mt-8 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer">
-            <span className="font-raleway font-bold text-white text-sm md:text-base">
-              DEMANDER LA BROCHURE
-            </span>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 md:mt-8">
+            <a
+              href={currentProject.brochureUrl}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer text-white">
+                DEMANDER LA BROCHURE
+              </Button>
+            </a>
+          </div>
         </section>
 
         {/* Apartments Section */}
@@ -291,7 +298,10 @@ export default function Project() {
             ))}
           </ul>
 
-          <Button className="px-6 py-3 mt-6 md:mt-8 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer">
+          <Button
+            onClick={() => window.open(currentProject.location, "_blank")}
+            className="px-6 py-3 mt-6 md:mt-8 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer"
+          >
             <span className="font-raleway font-bold text-white text-sm md:text-base">
               VOIR LA LOCALISATION
             </span>
