@@ -207,14 +207,13 @@ export default function About() {
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="relative rounded-[16px] sm:rounded-[21px] overflow-hidden min-w-[300px]"
+                    className="relative rounded-[16px] sm:rounded-[21px] overflow-hidden min-w-[300px] h-[400px] md:h-[500px]"
                   >
-                    <Image
-                      className="w-full h-[400px] md:h-full object-cover"
-                      alt={member.name}
-                      src={member.image}
-                      width={300}
-                      height={400}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                      style={{
+                        backgroundImage: `url('${member.image}')`,
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[rgba(196,196,196,0.02)] to-[rgba(31,51,89,0.81)] flex flex-col justify-end p-5 sm:p-8">
                       <h3 className="font-black text-white text-xl sm:text-2xl md:text-[25px] tracking-[1px] sm:tracking-[1.75px]">
