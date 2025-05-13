@@ -14,6 +14,11 @@ export interface Project {
   gallery: {
     [key: string]: string[];
   };
+  plans?: {
+    name: string;
+    path: string;
+    thumbnail: string;
+  }[];
 }
 
 export const allProjects: Project[] = [
@@ -38,6 +43,33 @@ export const allProjects: Project[] = [
       "Une entrée sécurisée 24H/24",
       "Une piscine sur la terrasse avec une vue imprenable",
       "Une salle de sport toute équipée avec sauna",
+    ],
+    plans: [
+      {
+        name: "RDC",
+        path: "/assets/images/keurMariem/pdf/page_1.pdf",
+        thumbnail: "/assets/images/keurMariem/hall.jpg",
+      },
+      {
+        name: "Appartement F4",
+        path: "/assets/images/keurMariem/pdf/page_2.pdf",
+        thumbnail: "/assets/images/keurMariem/f4-1.jpg",
+      },
+      {
+        name: "Appartement F3",
+        path: "/assets/images/keurMariem/pdf/page_3.pdf",
+        thumbnail: "/assets/images/keurMariem/f3-1.jpg",
+      },
+      {
+        name: "Appartement F4 2 EME au 4 EME étage",
+        path: "/assets/images/keurMariem/pdf/page_4.pdf",
+        thumbnail: "/assets/images/keurMariem/f4-1.jpg",
+      },
+      {
+        name: "Appartement F3 2 EME au 4 EME étage",
+        path: "/assets/images/keurMariem/pdf/page_5.pdf",
+        thumbnail: "/assets/images/keurMariem/f3-1.jpg",
+      },
     ],
     description: [
       "Cette résidence est bien plus qu'un projet immobilier. C'est une vision incarnée de l'accueil chaleureux, de l'élégance et du confort que nous souhaitons vous faire vivre en ce lieu.",
@@ -89,6 +121,9 @@ export const allProjects: Project[] = [
     status: "En cours",
     startDate: "Mars 2025",
     endDate: "Décembre 2026",
+    location: "https://maps.app.goo.gl/oejXYVJjB8NpAa4H9",
+    brochureUrl:
+      "http://bronchure-pdf.fulserproperties.com/brochurekarenga.pdf",
     apartmentTypes: ["18 studios F2", "9 appartements F3", "1 Penthouse"],
     amenities: [
       "Une entrée sécurisée 24H/24",
@@ -98,6 +133,39 @@ export const allProjects: Project[] = [
     description: [
       "Idéalement située dans le quartier prisé des Almadies de Dakar, la résidence Karenga bénéficie d'un cadre exceptionnel. La résidence est située à proximité immédiate des boutiques et restaurants prisés de la capitale, et de toutes les commodités indispensables à une vie urbaine confortable.",
       "Cette localisation strategique saura séduire une clientèle exigeante à la recherche d'un cadre de vie alliant praticité et raffinement.",
+    ],
+    plans: [
+      {
+        name: "RDC",
+        path: "/assets/images/karenga/pdf/PL_KARENGA_RDC.pdf",
+        thumbnail: "/assets/images/karenga/entree hall.jpg",
+      },
+      {
+        name: "ÉTAGE COURANT",
+        path: "/assets/images/karenga/pdf/PL_KARENGA_ETAGE COURANT.pdf",
+        thumbnail: "/assets/images/karenga/sejour.jpg",
+      },
+      {
+        name: "TERRASSE",
+        path: "/assets/images/karenga/pdf/PL_KARENGA_TERRASSE.pdf",
+        thumbnail: "/assets/images/karenga/terrasse.jpg",
+      },
+      {
+        name: "STUDIO",
+        path: "/assets/images/karenga/pdf/PL_KARENGA_STUDIO.pdf",
+        thumbnail: "/assets/images/karenga/ch studio.jpg",
+      },
+      {
+        name: "F3",
+        path: "/assets/images/karenga/pdf/PL_KARENGA_F3.pdf",
+        thumbnail:
+          "/assets/images/karenga/salon-2_Post-av-gig-gigapixel-art-scale-2_00x.jpg",
+      },
+      {
+        name: "PENTHOUSE",
+        path: "/assets/images/karenga/pdf/PL_KARENGA_PENTHOUSE.pdf",
+        thumbnail: "/assets/images/karenga/terrasse penthouse.jpg",
+      },
     ],
     gallery: {
       FAÇADE: [

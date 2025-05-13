@@ -149,7 +149,7 @@ export default function ServicesPage() {
                   <CardContent className="p-4 md:p-8">
                     <div className="flex items-center mb-6">
                       <div className="w-[13px] h-[13px] rounded-[6.5px] bg-[#d99541] mr-2"></div>
-                      <h2 className="font-['Elza_Text_Trial-Bold'] font-bold text-[#1f3359] text-[20px] md:text-[25px]">
+                      <h2 className=" font-bold text-[#1f3359] text-[20px] md:text-[25px]">
                         Liste des services
                       </h2>
                     </div>
@@ -166,7 +166,7 @@ export default function ServicesPage() {
                           }`}
                         >
                           <span
-                            className={`font-['Raleway'] font-bold ${
+                            className={` font-bold ${
                               service.id === activeServiceId
                                 ? "text-white"
                                 : "text-[#1f3359]"
@@ -199,10 +199,10 @@ export default function ServicesPage() {
 
                 {serviceData.sections.map((section, index) => (
                   <div key={index} className="mt-12 md:mt-16">
-                    <h2 className="font-['Raleway'] font-bold text-[#122e48] text-[40px] md:text-[58px] leading-[1.2] md:leading-[30px]">
+                    <h2 className=" font-bold text-[#122e48] text-[40px] md:text-[58px] leading-[1.2] md:leading-[30px]">
                       {section.title}
                     </h2>
-                    <p className="mt-6 md:mt-8 font-['Raleway'] text-[#122e48] text-base leading-[27px]">
+                    <p className="mt-6 md:mt-8  text-[#122e48] text-base leading-[27px]">
                       {section.content}
                     </p>
                   </div>
