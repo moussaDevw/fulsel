@@ -131,7 +131,7 @@ export default function ServicesPage() {
         </section>
       </div>
       <div className="bg-[#F5F4F2] z-10">
-        <FinanceSimulator className="mt-0 md:mt-40 lg:mt-25" />
+        {/* <FinanceSimulator className="mt-0 md:mt-40 lg:mt-25" /> */}
       </div>
       <Footer className="mt-0" />
     </div>

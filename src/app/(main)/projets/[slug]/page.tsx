@@ -18,43 +18,6 @@ import {
 } from "@/components/ui/dialog";
 
 // Plans data
-const plans = [
-  {
-    name: "RDC",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_RDC.pdf",
-    thumbnail: "/assets/images/keurMariem/hall.jpg",
-  },
-  {
-    name: "ÉTAGE COURANT",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_ETAGE COURANT.pdf",
-    thumbnail: "/assets/images/keurMariem/f4-1.jpg",
-  },
-  {
-    name: "TERRASSE",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_TERRASSE.pdf",
-    thumbnail: "/assets/images/keurMariem/espace1.png",
-  },
-  {
-    name: "STUDIO 1",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_STUDIO 1.pdf",
-    thumbnail: "/assets/images/keurMariem/studio1.jpg",
-  },
-  {
-    name: "STUDIO 2",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_STUDIO 2.pdf",
-    thumbnail: "/assets/images/keurMariem/studio2.jpg",
-  },
-  {
-    name: "F3",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_F3.pdf",
-    thumbnail: "/assets/images/keurMariem/f3-1.jpg",
-  },
-  {
-    name: "PENTHOUSE",
-    path: "/assets/images/keurMariem/pdf/PL_KARANGA_PENTHOUSE.pdf",
-    thumbnail: "/assets/images/keurMariem/pen1.png",
-  },
-];
 
 export default function Project() {
   const params = useParams();
@@ -201,8 +164,8 @@ export default function Project() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer text-white">
-                DEMANDER LA BROCHURE
+              <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer text-white font-bold">
+                VOIR LA BROCHURE
               </Button>
             </a>
           </div>
@@ -241,7 +204,7 @@ export default function Project() {
                 </DialogTitle>
               </DialogHeader>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {plans.map((plan) => (
+                {currentProject.plans?.map((plan) => (
                   <a
                     key={plan.name}
                     href={plan.path}
@@ -398,7 +361,7 @@ export default function Project() {
           </div>
         </section>
 
-        <FinanceSimulator className="!mb-0 bg-[#F5F4F2] mt-10 lg:py-40" />
+        {/* <FinanceSimulator className="!mb-0 bg-[#F5F4F2] mt-10 lg:py-40" /> */}
         <Footer className="!mt-0" />
       </div>
     </div>

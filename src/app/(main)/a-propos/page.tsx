@@ -235,7 +235,7 @@ export default function About() {
             </div>
           </div>
         </section>
-        <FinanceSimulator className="mt-40 sm:mt-60" />
+        {/* <FinanceSimulator className="mt-40 sm:mt-60" /> */}
         <Footer />
       </div>
     </div>

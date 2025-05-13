@@ -10,10 +10,6 @@ import { allProjects } from "@/data/projects";
 export default function NosProjectPage() {
   const router = useRouter();
 
-  const goToProject = (slug: string) => {
-    router.push(`/projets/${slug}`);
-  };
-
   return (
     <div className="bg-[#FDFBF9] flex flex-row justify-center w-full">
       <div className="overflow-hidden w-full relative">
@@ -41,7 +37,7 @@ export default function NosProjectPage() {
           </div>
         </section>
 
-        <FinanceSimulator className="bg-[#F5F4F2] !mb-0 py-15 pt-35" />
+        {/* <FinanceSimulator className="bg-[#F5F4F2] !mb-0 py-15 pt-35" /> */}
         <Footer className="mt-0" />
       </div>
     </div>

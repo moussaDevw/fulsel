@@ -120,14 +120,14 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
                 {
                   icon: Instagram,
                   name: "Instagram",
-                  link: "https://instagram.com",
+                  link: "https://www.instagram.com/fulserproperties?igsh=MTF0NmR5NmhzY3c2OA%3D%3D&utm_source=qr",
                 },
                 {
                   icon: Linkedin,
                   name: "LinkedIn",
-                  link: "https://linkedin.com",
+                  link: "https://www.linkedin.com/company/fulser-properties",
                 },
-                { icon: Twitter, name: "Twitter", link: "https://twitter.com" },
+                { icon: Twitter, name: "Twitter", link: "#" },
               ].map(({ icon: Icon, name, link }, index) => (
                 <Link
                   href={link}
