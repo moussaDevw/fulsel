@@ -17,26 +17,26 @@ export const ServiceSection = () => {
   };
   const serviceCards = [
     {
-      id: "01",
+      id: "1",
       title: "RECHERCHE DE FONCIER",
       description:
-        "Partenariats avec des propriétaires pour mise à disposition de leurs terrains. En contre-partie, le propriétaire reçoit un ou des lots dans le cadre du projet.",
+        "Nous facilitons la rencontre entre propriétaires fonciers et porteurs de projets immobiliers grâce à un réseau solide...",
       imageSrc: "/assets/images/img3.jpg",
       imagePosition: "bottom",
     },
     {
-      id: "02",
+      id: "2",
       title: "ELABORATION DU PROJET",
       description:
-        "Elaboration du projet immobilier selon la clientèle cible et selon le quartier en collaboration avec l'architecte. Construction clés en main.",
+        "Nous accompagnons nos partenaires dans la conception et la structuration de projets immobiliers viables et durables...",
       imageSrc: "/assets/images/img4.jpg",
       imagePosition: "top",
     },
     {
-      id: "03",
+      id: "3",
       title: "COMMERCIALISATION",
       description:
-        "Vente en l'état futur d'achèvement (VEFA) qui permet une acquisition en douceur du bien par les futurs propriétaires.",
+        "Nous prenons en charge la commercialisation des projets pour optimiser leur visibilité et accélérer les ventes...",
       imageSrc: "/assets/images/img5.jpg",
       imagePosition: "bottom",
     },
@@ -101,7 +101,7 @@ export const ServiceSection = () => {
                   <div className="p-3 sm:p-4 md:p-5 flex-grow">
                     <div className="flex items-start">
                       <span className="font-['Raleway',Helvetica] font-extrabold text-[#fbfafa] text-[16px] sm:text-[20px] md:text-[22px] lg:text-[25px] xl:text-[63px] leading-[24px] sm:leading-[30px]">
-                        {card.id}
+                        {card.id.padStart(2, "0")}
                       </span>
                       <h2 className="ml-3 sm:ml-4 font-['Raleway',Helvetica] font-bold text-[#d99541] text-base sm:text-xs md:text-sm xl:text-[25px] leading-[24px] sm:leading-[30px]">
                         {card.title}
@@ -115,7 +115,7 @@ export const ServiceSection = () => {
                     <Button
                       onClick={() => goToService(card.id)}
                       variant="outline"
-                      className="mt-4 sm:mt-6 h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] rounded-[46px] border-[#d99541] bg-[#122e48] font-['Raleway',Helvetica] font-bold text-[#fbfafa] text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer"
+                      className="mt-4 sm:mt-6 h-[36px] sm:h-[43px] w-[110px] sm:w-[126px] rounded-[46px] border-[#d99541] bg-[#122e48] font-['Raleway',Helvetica] font-bold text-[#fbfafa] text-[13px] sm:text-[15px] tracking-[0.5px] sm:tracking-[0.75px] cursor-pointer hover:bg-[#d99541] hover:text-[#122e48] transition-colors"
                     >
                       LIRE PLUS
                     </Button>

@@ -9,50 +9,50 @@ import { useRouter } from "next/navigation";
 
 const financingSteps = [
   {
-    id: "01",
+    id: "1",
     title: "RECHERCHE DE FONCIER",
     description:
-      "Partenariats avec des propriétaires pour mise à disposition de leurs terrains. En contre-partie, le propriétaire reçoit un ou des lots dans le cadre du projet.",
+      "Nous facilitons la rencontre entre propriétaires fonciers et porteurs de projets immobiliers grâce à un réseau solide...",
     imageSrc: "/assets/images/se1.jpg",
     imagePosition: "bottom",
   },
   {
-    id: "02",
+    id: "2",
     title: "ELABORATION DU PROJET",
     description:
-      "Elaboration du projet immobilier selon la clientèle cible et selon le quartier en collaboration avec l'architecte. Construction clés en main.",
+      "Nous accompagnons nos partenaires dans la conception et la structuration de projets immobiliers viables et durables...",
     imageSrc: "/assets/images/se2.jpg",
     imagePosition: "top",
   },
   {
-    id: "03",
+    id: "3",
     title: "COMMERCIALISATION",
     description:
-      "Vente en l'état futur d'achèvement (VEFA) qui permet une acquisition en douceur du bien par les futurs propriétaires.",
+      "Nous prenons en charge la commercialisation des projets pour optimiser leur visibilité et accélérer les ventes...",
     imageSrc: "/assets/images/img4.jpg",
     imagePosition: "bottom",
   },
   {
-    id: "04",
+    id: "4",
     title: "SUIVI DES TRAVAUX",
     description:
-      "Respect des échéances et des budgets, contrôle de la qualité et de la conformité.",
-    imageSrc: "/assets/images/se2.jpg",
+      "Nous assurons le suivi technique et administratif des chantiers pour garantir la qualité et le respect des délais...",
+    imageSrc: "/assets/images/outils.jpg",
     imagePosition: "bottom",
   },
   {
-    id: "05",
+    id: "5",
     title: "GESTION IMMOBILIÈRE",
     description:
-      "Gestion locative des appartements et maintenance des immeubles.",
-    imageSrc: "/assets/images/se1.jpg",
+      "Nous proposons un service de gestion immobilière pour assurer la valorisation continue du patrimoine bâti...",
+    imageSrc: "/assets/images/constructeur.jpg",
     imagePosition: "top",
   },
 ];
 
 export default function ServicesPage() {
   const router = useRouter();
-  const goToService = (id: number) => {
+  const goToService = (id: string) => {
     router.push(`/services/${id}`);
   };
   return (
@@ -71,7 +71,7 @@ export default function ServicesPage() {
             {financingSteps.map((step, index) => (
               <Card
                 key={step.id}
-                onClick={() => goToService(index)}
+                onClick={() => goToService(step.id)}
                 className="relative h-auto min-h-[500px] sm:min-h-[550px] md:min-h-[600px] rounded-[16px] sm:rounded-[21px] shadow-[0px_0px_7px_#1f335940] overflow-hidden cursor-pointer transition-transform hover:scale-105 border-none bg-white mb-10 mt-10 md:mt-0 lg:mt-0"
               >
                 <CardContent className="p-0 h-full flex flex-col">
@@ -93,7 +93,7 @@ export default function ServicesPage() {
                       <div className="relative">
                         <div className="flex items-start sm:items-center gap-2">
                           <span className="[font-family:'Elza_Text_Trial-Bold',Helvetica] font-bold text-[#122e48] text-[40px] sm:text-[50px] md:text-[63px] leading-[40px] sm:leading-[50px] md:leading-[63px]">
-                            {step.id}
+                            {step.id.padStart(2, "0")}
                           </span>
 
                           <h3 className="[font-family:'Elza_Text_Trial-Bold',Helvetica] font-bold text-[#d99541] text-base sm:text-xs md:text-sm xl:text-[22px] leading-[24px] sm:leading-[28px] md:leading-[30px] mt-2">
