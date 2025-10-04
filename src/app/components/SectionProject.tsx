@@ -33,18 +33,20 @@ export const SectionProject = ({
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Project filter options
+  // Project filter options - SUPPRIMÉ "A VENIR"
   const filterOptions = [
     { id: "tous", label: "TOUS", value: "tous" },
     { id: "en-cours", label: "EN COURS", value: "En cours" },
-    { id: "a-venir", label: "A VENIR", value: "A venir" },
   ];
 
   const [activeFilter, setActiveFilter] = useState("tous");
 
-  const filteredProjects = projects.filter((project) =>
-    activeFilter === "tous" ? true : project.status === activeFilter
-  );
+  // Filtrer pour EXCLURE les projets "A venir"
+  const filteredProjects = projects
+    .filter((project) => project.status !== "A venir")
+    .filter((project) =>
+      activeFilter === "tous" ? true : project.status === activeFilter
+    );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,7 +79,10 @@ export const SectionProject = ({
   };
 
   return (
-    <main className={`min-h-screen py-4 ${className}`}>
+    <main
+      className={`py-4 ${className}`}
+      style={{ transform: "scale(0.95)", transformOrigin: "top center" }}
+    >
       {/* Header */}
       <header className="text-center">
         {showTitle && (
