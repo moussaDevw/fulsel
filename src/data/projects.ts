@@ -4,6 +4,7 @@ export interface Project {
   image: string;
   slug: string;
   status: "En cours" | "A venir";
+  bannerImage?: string | null;
   startDate: string;
   endDate: string;
   description: string[];

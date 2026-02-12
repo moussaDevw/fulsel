@@ -37,13 +37,13 @@ export const SectionProject = ({
   const filterOptions = [
     { id: "tous", label: "TOUS", value: "tous" },
     { id: "en-cours", label: "EN COURS", value: "En cours" },
+    { id: "a-venir", label: "À VENIR", value: "A venir" },
   ];
 
   const [activeFilter, setActiveFilter] = useState("tous");
 
   // Filtrer pour EXCLURE les projets "A venir"
   const filteredProjects = projects
-    .filter((project) => project.status !== "A venir")
     .filter((project) =>
       activeFilter === "tous" ? true : project.status === activeFilter
     );
@@ -132,7 +132,7 @@ export const SectionProject = ({
             }`}
             style={{ transitionDelay: `${index * 0.1}s` }}
           >
-            <Card className="w-full max-w-[630px] h-[651px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10 group hover:scale-105 hover:shadow-2xl transition-all duration-500 hover:rotate-1">
+            <Card className="w-full max-w-[630px] h-[450px] md:h-[500px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10 group hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 hover:rotate-1">
               <div className="relative overflow-hidden h-full">
                 <img
                   src={project.image}
@@ -151,16 +151,15 @@ export const SectionProject = ({
               </Badge>
 
               <CardContent
-                onClick={onClick}
-                className="absolute bottom-0 left-0 right-0 h-[122px] p-0 cursor-pointer group-hover:h-[140px] transition-all duration-300"
+                className="absolute bottom-0 left-0 right-0 h-[100px] p-0 cursor-pointer group-hover:h-[120px] transition-all duration-300"
               >
-                <div className="flex items-center justify-between px-6 pt-11 group-hover:pt-8 transition-all duration-300">
-                  <div className="absolute h-[125px] right-0 left-0 bottom-0 rounded-[0px_0px_21px_21px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)] group-hover:from-[#1f3359] group-hover:via-[rgba(31,51,89,0.8)] group-hover:to-[rgba(31,51,89,0.2)] transition-all duration-500" />
+                <div className="flex items-center justify-between px-6 pt-6 group-hover:pt-4 transition-all duration-300 space-y-0">
+                  <div className="absolute h-[100px] right-0 left-0 bottom-0 rounded-[0px_0px_21px_21px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)] group-hover:from-[#1f3359] group-hover:via-[rgba(31,51,89,0.8)] group-hover:to-[rgba(31,51,89,0.2)] transition-all duration-500" />
                   <h2
                     className="z-20 font-['Inter',Helvetica] font-bold text-white text-[24px] md:text-xl xl:text-[34px] flex items-center gap-2 group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                     onClick={() => goToDetailProject(project.slug)}
                   >
-                    <span className="group-hover:text-[#d99541] transition-colors duration-300">
+                    <span className="group-hover:text-[#d99541] transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
                       {project.title}
                     </span>
                     <img

@@ -4,13 +4,17 @@ import { Button } from "@/components/ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
+import { getPublicSettings } from "@/lib/api";
+
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [settings, setSettings] = useState<Record<string, string>>({});
 
   useEffect(() => {
+    getPublicSettings().then(data => setSettings(data || {})).catch(console.error);
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
@@ -40,7 +44,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="relative h-8 w-8 pr-2">
               <img
-                src="/assets/svgs/logo.svg"
+                src={settings.logo || "/assets/svgs/logo.svg"}
                 alt="Logo"
                 className="w-full h-full"
               />

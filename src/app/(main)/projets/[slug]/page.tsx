@@ -19,13 +19,38 @@ import {
 
 // Plans data
 
+import { getResidenceBySlug } from "@/lib/api";
+import { Project as ProjectType } from "@/data/projects";
+
 export default function Project() {
   const params = useParams();
   const router = useRouter();
-  const currentProject = allProjects.find((p) => p.slug === params.slug);
-  const [activeTab, setActiveTab] = useState(
-    currentProject?.slug === "karenga-almadies" ? "FAÇADE" : "ESPACE LOISIRS"
-  );
+  const [currentProject, setCurrentProject] = useState<ProjectType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("");
+
+  React.useEffect(() => {
+    if (params.slug) {
+      getResidenceBySlug(params.slug as string)
+        .then((data) => {
+          setCurrentProject(data);
+          if (data) {
+            setActiveTab(data.slug === "karenga-almadies" ? "FAÇADE" : 
+                         Object.keys(data.gallery)[0] || "ESPACE LOISIRS");
+          }
+        })
+        .catch(console.error)
+        .finally(() => setLoading(false));
+    }
+  }, [params.slug]);
+
+  if (loading) {
+    return (
+      <div className="bg-white min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-fulser-blue"></div>
+      </div>
+    );
+  }
 
   if (!currentProject) {
     return <div>Projet non trouvé</div>;
@@ -38,6 +63,7 @@ export default function Project() {
         <NavBar />
         <HeroSection
           title={currentProject.title}
+          backgroundImage={currentProject.bannerImage || currentProject.image}
           breadcrumbs={[
             { label: "Accueil", link: "/" },
             { label: "Projets", link: "/projets" },
@@ -97,6 +123,7 @@ export default function Project() {
 
         <HeroSection
           title={currentProject.title}
+          backgroundImage={currentProject.bannerImage || currentProject.image}
           breadcrumbs={[
             { label: "Accueil", link: "/" },
             { label: "Projets", link: "/projets" },
@@ -158,16 +185,18 @@ export default function Project() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-6 md:mt-8">
-            <a
-              href={currentProject.brochureUrl}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer text-white font-bold">
-                VOIR LA BROCHURE
-              </Button>
-            </a>
+            {currentProject.brochureUrl && currentProject.brochureUrl !== "#" && (
+              <a
+                href={currentProject.brochureUrl}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer text-white font-bold">
+                  VOIR LA BROCHURE
+                </Button>
+              </a>
+            )}
           </div>
         </section>
 
@@ -189,58 +218,60 @@ export default function Project() {
             ))}
           </ul>
 
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer">
-                <span className="font-raleway font-bold text-white text-sm md:text-base">
-                  VOIR LES PLANS
-                </span>
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl w-full h-[80vh] bg-white overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-[#1f3359] mb-4">
-                  Plans du projet
-                </DialogTitle>
-              </DialogHeader>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {currentProject.plans?.map((plan) => (
-                  <a
-                    key={plan.name}
-                    href={plan.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block bg-white rounded-lg shadow hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
-                  >
-                    <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                      <img
-                        src={plan.thumbnail}
-                        alt={`Aperçu ${plan.name}`}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200">
-                        <span className="text-white font-bold">
-                          Voir le plan
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-4 border-t">
-                      <div className="flex items-center space-x-3">
+          {currentProject.plans && currentProject.plans.length > 0 && (
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="px-6 py-3 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer">
+                  <span className="font-raleway font-bold text-white text-sm md:text-base">
+                    VOIR LES PLANS
+                  </span>
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl w-full h-[80vh] bg-white overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-[#1f3359] mb-4">
+                    Plans du projet
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {currentProject.plans?.map((plan) => (
+                    <a
+                      key={plan.name}
+                      href={plan.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-white rounded-lg shadow hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
+                    >
+                      <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                         <img
-                          src="/assets/svgs/pdf-icon.svg"
-                          alt="PDF"
-                          className="w-6 h-6"
+                          src={plan.thumbnail}
+                          alt={`Aperçu ${plan.name}`}
+                          className="w-full h-full object-cover"
                         />
-                        <span className="font-raleway font-medium text-[#1f3359]">
-                          {plan.name}
-                        </span>
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200">
+                          <span className="text-white font-bold">
+                            Voir le plan
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </DialogContent>
-          </Dialog>
+                      <div className="p-4 border-t">
+                        <div className="flex items-center space-x-3">
+                          <img
+                            src="/assets/svgs/pdf-icon.svg"
+                            alt="PDF"
+                            className="w-6 h-6"
+                          />
+                          <span className="font-raleway font-medium text-[#1f3359]">
+                            {plan.name}
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
+          )}
         </section>
 
         {/* Amenities Section */}
@@ -261,14 +292,16 @@ export default function Project() {
             ))}
           </ul>
 
-          <Button
-            onClick={() => window.open(currentProject.location, "_blank")}
-            className="px-6 py-3 mt-6 md:mt-8 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer"
-          >
-            <span className="font-raleway font-bold text-white text-sm md:text-base">
-              VOIR LA LOCALISATION
-            </span>
-          </Button>
+          {currentProject.location && (
+            <Button
+              onClick={() => window.open(currentProject.location, "_blank")}
+              className="px-6 py-3 mt-6 md:mt-8 rounded-full shadow-md bg-[#B77625] hover:bg-[#965f1e] transition-colors duration-200 cursor-pointer"
+            >
+              <span className="font-raleway font-bold text-white text-sm md:text-base">
+                VOIR LA LOCALISATION
+              </span>
+            </Button>
+          )}
         </section>
 
         {/* Gallery Section */}
