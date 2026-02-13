@@ -41,15 +41,19 @@ export default function Navbar() {
       <div className="container">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <div className="relative h-8 w-8 pr-2">
+          <Link href="/" className="flex items-center group">
+            <div className={`relative transition-all duration-300 ${
+              isScrolled 
+                ? "h-10 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px]" 
+                : "h-12 w-auto max-w-[140px] sm:max-w-[160px] md:h-14 md:max-w-[180px] lg:h-16 lg:max-w-[200px]"
+            }`}>
               <img
                 src={settings.logo || "/assets/svgs/logo.svg"}
                 alt="Logo"
-                className="w-full h-full"
+                className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <span
                 className={`text-xl font-bold leading-none ${
                   isScrolled ? "text-white" : "text-[#1F3359] md:text-white"
@@ -64,7 +68,7 @@ export default function Navbar() {
               >
                 PROPERTIES
               </span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Menu Hamburger (mobile) */}

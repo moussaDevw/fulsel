@@ -1,10 +1,11 @@
 "use client";
-import { MoveRightIcon } from "lucide-react";
+
 import React, { useState, useRef, useEffect } from "react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { useRouter } from "next/navigation";
+import { Skeleton } from "../../components/ui/skeleton";
 
 interface Project {
   id: number;
@@ -16,6 +17,7 @@ interface Project {
 
 type ProjectProps = {
   projects: Project[];
+  isLoading?: boolean;
   showTitle?: boolean;
   shwAllProjects?: boolean;
   onClick?: () => void;
@@ -24,6 +26,7 @@ type ProjectProps = {
 
 export const SectionProject = ({
   projects,
+  isLoading = false,
   showTitle = true,
   onClick,
   shwAllProjects = true,
@@ -118,7 +121,41 @@ export const SectionProject = ({
 
       {/* Projects grid */}
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 gap-x-10 mb-5 lg:mb-10">
-        {filteredProjects.map((project, index) => (
+        {isLoading
+          ? // Premium Skeleton Loading State
+            Array.from({ length: 4 }).map((_, index) => (
+              <div
+                key={`skeleton-${index}`}
+                className="mb-10 animate-in fade-in slide-in-from-bottom-5 duration-700"
+                style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
+              >
+                <Card className="w-full max-w-[630px] h-[450px] md:h-[500px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000020] border-none bg-white">
+                  {/* Base shimmer background */}
+                  <div className="absolute inset-0 bg-slate-50 overflow-hidden">
+                    <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+                  </div>
+                  
+                  {/* Top Badge Skeleton */}
+                  <div className="absolute top-0 left-0 w-[119px] h-[47px] bg-[#d99541]/10 rounded-[21px_0px_0px_0px] border-r border-b border-[#d99541]/5 flex items-center justify-center">
+                    <Skeleton className="w-16 h-4 bg-[#d99541]/20" />
+                  </div>
+
+                  {/* Main content shimmer */}
+                  <div className="absolute inset-x-0 bottom-0 h-[100px] p-6 bg-gradient-to-t from-[#1f3359]/10 to-transparent flex items-center">
+                    <div className="w-full space-y-3">
+                      <Skeleton className="h-8 w-2/3 bg-[#1f3359]/20" />
+                      <Skeleton className="h-4 w-1/3 bg-[#1f3359]/10" />
+                    </div>
+                  </div>
+
+                  {/* Decorative element */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03]">
+                    <img src="/assets/svgs/arrowGrup.svg" alt="" className="w-32 h-32 grayscale" />
+                  </div>
+                </Card>
+              </div>
+            ))
+          : filteredProjects.map((project, index) => (
           <div
             key={project.id}
             ref={(el) => {
@@ -222,10 +259,14 @@ export const SectionProject = ({
           animation-fill-mode: both;
         }
 
+        @keyframes shimmer {
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
         @keyframes shine {
           0% {
-            transform: translateX(-100%) skewX(-12deg);
-          }
           100% {
             transform: translateX(300%) skewX(-12deg);
           }

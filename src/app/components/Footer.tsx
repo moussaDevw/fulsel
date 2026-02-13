@@ -77,14 +77,14 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
                 alt="Logo"
                 src={settings.logo || "/assets/svgs/logo.svg"}
               />
-              <div>
+              {/* <div>
                 <h1 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   FULSER
                 </h1>
                 <p className="text-[#D99541] text-xs md:text-sm font-normal uppercase tracking-widest">
                   PROPERTIES
                 </p>
-              </div>
+              </div> */}
             </Link>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">

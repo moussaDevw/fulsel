@@ -13,9 +13,13 @@ import React from "react";
 
 export default function Home() {
   const [projects, setProjects] = React.useState<ProjectType[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    getPublicResidences().then(setProjects).catch(console.error);
+    getPublicResidences()
+      .then(setProjects)
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -24,7 +28,7 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <ServiceSection />
-        <SectionProject projects={projects} showTitle={true} />
+        <SectionProject projects={projects} showTitle={true} isLoading={loading} />
         {/* <SectionArticle /> */}
         {/* <FinanceSimulator className="mt-10 lg:mt-60" /> */}
         <Footer />

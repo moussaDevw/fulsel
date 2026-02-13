@@ -32,18 +32,13 @@ export default function NosProjectPage() {
 
         <section className="w-full py-16">
           {/* Projects Grid */}
-          {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-fulser-blue"></div>
-            </div>
-          ) : (
-            <SectionProject
-              projects={projects}
-              showTitle={true}
-              shwAllProjects={false}
-              className="bg-[#FDFBF9]"
-            />
-          )}
+          <SectionProject
+            projects={projects}
+            isLoading={loading}
+            showTitle={false}
+            shwAllProjects={false}
+            className="bg-[#FDFBF9]"
+          />
 
 
           {/* Pagination */}

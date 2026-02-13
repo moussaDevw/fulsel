@@ -5,6 +5,8 @@
 
 @theme {
   --color-copperOrange: #d99541;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
 }
 
 @layer base {

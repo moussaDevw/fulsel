@@ -1,6 +1,6 @@
 import { Project } from "@/data/projects";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+const API_URL = "https://management.fulserproperties.com"
 
 const DEFAULT_RESIDENCE_IMAGE = "/assets/images/img9.jpg";
 
