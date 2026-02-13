@@ -1,10 +1,11 @@
 "use client";
-import { MoveRightIcon } from "lucide-react";
+
 import React, { useState, useRef, useEffect } from "react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { useRouter } from "next/navigation";
+import { Skeleton } from "../../components/ui/skeleton";
 
 interface Project {
   id: number;
@@ -16,6 +17,7 @@ interface Project {
 
 type ProjectProps = {
   projects: Project[];
+  isLoading?: boolean;
   showTitle?: boolean;
   shwAllProjects?: boolean;
   onClick?: () => void;
@@ -24,6 +26,7 @@ type ProjectProps = {
 
 export const SectionProject = ({
   projects,
+  isLoading = false,
   showTitle = true,
   onClick,
   shwAllProjects = true,
@@ -37,13 +40,13 @@ export const SectionProject = ({
   const filterOptions = [
     { id: "tous", label: "TOUS", value: "tous" },
     { id: "en-cours", label: "EN COURS", value: "En cours" },
+    { id: "a-venir", label: "À VENIR", value: "A venir" },
   ];
 
   const [activeFilter, setActiveFilter] = useState("tous");
 
   // Filtrer pour EXCLURE les projets "A venir"
   const filteredProjects = projects
-    .filter((project) => project.status !== "A venir")
     .filter((project) =>
       activeFilter === "tous" ? true : project.status === activeFilter
     );
@@ -118,7 +121,41 @@ export const SectionProject = ({
 
       {/* Projects grid */}
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 gap-x-10 mb-5 lg:mb-10">
-        {filteredProjects.map((project, index) => (
+        {isLoading
+          ? // Premium Skeleton Loading State
+            Array.from({ length: 4 }).map((_, index) => (
+              <div
+                key={`skeleton-${index}`}
+                className="mb-10 animate-in fade-in slide-in-from-bottom-5 duration-700"
+                style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
+              >
+                <Card className="w-full max-w-[630px] h-[450px] md:h-[500px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000020] border-none bg-white">
+                  {/* Base shimmer background */}
+                  <div className="absolute inset-0 bg-slate-50 overflow-hidden">
+                    <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+                  </div>
+                  
+                  {/* Top Badge Skeleton */}
+                  <div className="absolute top-0 left-0 w-[119px] h-[47px] bg-[#d99541]/10 rounded-[21px_0px_0px_0px] border-r border-b border-[#d99541]/5 flex items-center justify-center">
+                    <Skeleton className="w-16 h-4 bg-[#d99541]/20" />
+                  </div>
+
+                  {/* Main content shimmer */}
+                  <div className="absolute inset-x-0 bottom-0 h-[100px] p-6 bg-gradient-to-t from-[#1f3359]/10 to-transparent flex items-center">
+                    <div className="w-full space-y-3">
+                      <Skeleton className="h-8 w-2/3 bg-[#1f3359]/20" />
+                      <Skeleton className="h-4 w-1/3 bg-[#1f3359]/10" />
+                    </div>
+                  </div>
+
+                  {/* Decorative element */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03]">
+                    <img src="/assets/svgs/arrowGrup.svg" alt="" className="w-32 h-32 grayscale" />
+                  </div>
+                </Card>
+              </div>
+            ))
+          : filteredProjects.map((project, index) => (
           <div
             key={project.id}
             ref={(el) => {
@@ -132,7 +169,7 @@ export const SectionProject = ({
             }`}
             style={{ transitionDelay: `${index * 0.1}s` }}
           >
-            <Card className="w-full max-w-[630px] h-[651px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10 group hover:scale-105 hover:shadow-2xl transition-all duration-500 hover:rotate-1">
+            <Card className="w-full max-w-[630px] h-[450px] md:h-[500px] rounded-[21px] overflow-hidden relative shadow-lg shadow-[#00000040] border-none mb-10 group hover:scale-[1.02] hover:shadow-2xl transition-all duration-500 hover:rotate-1">
               <div className="relative overflow-hidden h-full">
                 <img
                   src={project.image}
@@ -151,16 +188,15 @@ export const SectionProject = ({
               </Badge>
 
               <CardContent
-                onClick={onClick}
-                className="absolute bottom-0 left-0 right-0 h-[122px] p-0 cursor-pointer group-hover:h-[140px] transition-all duration-300"
+                className="absolute bottom-0 left-0 right-0 h-[100px] p-0 cursor-pointer group-hover:h-[120px] transition-all duration-300"
               >
-                <div className="flex items-center justify-between px-6 pt-11 group-hover:pt-8 transition-all duration-300">
-                  <div className="absolute h-[125px] right-0 left-0 bottom-0 rounded-[0px_0px_21px_21px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)] group-hover:from-[#1f3359] group-hover:via-[rgba(31,51,89,0.8)] group-hover:to-[rgba(31,51,89,0.2)] transition-all duration-500" />
+                <div className="flex items-center justify-between px-6 pt-6 group-hover:pt-4 transition-all duration-300 space-y-0">
+                  <div className="absolute h-[100px] right-0 left-0 bottom-0 rounded-[0px_0px_21px_21px] bg-gradient-to-t from-[#1f3359] via-[rgba(31,51,89,0.56)] to-[rgba(31,51,89,0.05)] group-hover:from-[#1f3359] group-hover:via-[rgba(31,51,89,0.8)] group-hover:to-[rgba(31,51,89,0.2)] transition-all duration-500" />
                   <h2
                     className="z-20 font-['Inter',Helvetica] font-bold text-white text-[24px] md:text-xl xl:text-[34px] flex items-center gap-2 group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                     onClick={() => goToDetailProject(project.slug)}
                   >
-                    <span className="group-hover:text-[#d99541] transition-colors duration-300">
+                    <span className="group-hover:text-[#d99541] transition-colors duration-300 text-lg md:text-xl lg:text-2xl">
                       {project.title}
                     </span>
                     <img
@@ -223,10 +259,14 @@ export const SectionProject = ({
           animation-fill-mode: both;
         }
 
+        @keyframes shimmer {
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
         @keyframes shine {
           0% {
-            transform: translateX(-100%) skewX(-12deg);
-          }
           100% {
             transform: translateX(300%) skewX(-12deg);
           }

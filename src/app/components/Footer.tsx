@@ -5,6 +5,7 @@ import { Separator } from "../../components/ui/separator";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { getPublicSettings } from "@/lib/api";
 
 interface FooterProps {
   className?: string;
@@ -13,6 +14,13 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
   const pathname = usePathname();
   const [email, setEmail] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [settings, setSettings] = React.useState<Record<string, string>>({});
+
+  React.useEffect(() => {
+    getPublicSettings()
+      .then(data => setSettings(data || {}))
+      .catch(console.error);
+  }, []);
 
   // Menu items data
   const footerMenus = {
@@ -67,16 +75,16 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
               <img
                 className="mr-4 h-12 w-auto"
                 alt="Logo"
-                src="/assets/svgs/logo.svg"
+                src={settings.logo || "/assets/svgs/logo.svg"}
               />
-              <div>
+              {/* <div>
                 <h1 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   FULSER
                 </h1>
                 <p className="text-[#D99541] text-xs md:text-sm font-normal uppercase tracking-widest">
                   PROPERTIES
                 </p>
-              </div>
+              </div> */}
             </Link>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -85,7 +93,7 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
                   TÉLÉPHONE
                 </h3>
                 <p className="font-raleway font-normal text-[#ffffffba] text-sm mt-2">
-                  +221 78 434 80 80
+                  {settings.phone || "+221 78 434 80 80"}
                 </p>
               </div>
 
@@ -94,7 +102,7 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
                   EMAIL :
                 </h3>
                 <p className="font-raleway font-normal text-[#ffffffba] text-sm mt-2">
-                  contact@fulserproperties.com
+                  {settings.email || settings.contact_email || "contact@fulserproperties.com"}
                 </p>
               </div>
 
@@ -103,7 +111,7 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
                   ADRESSE
                 </h3>
                 <p className="font-raleway font-normal text-[#ffffffba] text-sm mt-2">
-                  Dakar, Sénégal
+                  {settings.address || "Dakar, Sénégal"}
                 </p>
               </div>
             </div>
@@ -115,19 +123,19 @@ export const Footer = ({ className = "mt-10" }: FooterProps) => {
                 {
                   icon: Facebook,
                   name: "Facebook",
-                  link: "https://facebook.com",
+                  link: settings.facebook || "https://facebook.com",
                 },
                 {
                   icon: Instagram,
                   name: "Instagram",
-                  link: "https://www.instagram.com/fulserproperties?igsh=MTF0NmR5NmhzY3c2OA%3D%3D&utm_source=qr",
+                  link: settings.instagram || "https://www.instagram.com/fulserproperties",
                 },
                 {
                   icon: Linkedin,
                   name: "LinkedIn",
-                  link: "https://www.linkedin.com/company/fulser-properties",
+                  link: settings.linkedin || "https://www.linkedin.com/company/fulser-properties",
                 },
-                { icon: Twitter, name: "Twitter", link: "#" },
+                { icon: Twitter, name: "Twitter", link: settings.twitter || "#" },
               ].map(({ icon: Icon, name, link }, index) => (
                 <Link
                   href={link}

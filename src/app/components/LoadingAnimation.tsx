@@ -60,7 +60,7 @@ export default function LoadingAnimation({
             PROPERTIES
           </div>
 
-          {/* Cercle lumineux animé autour du logo */}
+          
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-32 h-32 md:w-48 md:h-48 border-2 border-[#d99541]/30 rounded-full animate-spin-slow"></div>
             <div className="absolute w-40 h-40 md:w-56 md:h-56 border border-white/20 rounded-full animate-spin-reverse"></div>
